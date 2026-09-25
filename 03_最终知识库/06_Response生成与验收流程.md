@@ -4,7 +4,7 @@
 
 ## SD-04 surgical audit 与完成门槛
 
-SD-04 贯穿全流程：发现问题后检查有证据定义的同类位置，只修改受影响链条；完成后分别报告写作、事实、版本和提交状态，不把其中一种通过冒充全部完成。
+SD-04 贯穿全流程：发现问题后先定位其所在层级，检查有证据定义的同类位置，只修改该层及受影响链条；完成后分别报告写作、事实、版本和提交状态，不把其中一种通过冒充全部完成。
 
 ## Step 1 读取并锁定材料
 
@@ -19,6 +19,7 @@ SD-04 贯穿全流程：发现问题后检查有证据定义的同类位置，�
 - reviewer 真正要判断什么；
 - reviewer situation 属于 B1 局部 correction、B2 局部 equation/definition、B3 缺推导、B4 新实验、B5 comparison、B6 多 concern 中哪一种或哪几种；
 - 一句话直接答案；
+- 支撑直接答案所需的核心判断及其初步先后依赖；数量由 concern 和证据决定，不把内部判断列表写成对 reviewer 的固定提纲；
 - 需要什么动作或直接 evidence；
 - conclusion 在什么条件下成立；
 - 稿件改动或位置；
@@ -40,16 +41,17 @@ SD-04 贯穿全流程：发现问题后检查有证据定义的同类位置，�
 
 先核对拟采用的组织是否改变 Step 2 记录的 project-specific response constraints。若作者方案与 reviewer 原 concern、Step 3 的 evidence/claim 检查、数学事实或前后逻辑发生明确冲突，标记冲突及原因，保留原方案并等待作者决定；不得静默重排，也不得机械照写。只有作者未规定该处顺序，或用户明确授权重新优化方案时，才由 TIE-native 机制选择主要先后关系。
 
-1. 在项目路线允许的空间内用 TN-01/A1 规划实质入口；“尽快进入实质”可由直接答案或必要的最小框架实现，不表示所有 action/evidence 都应提前。用 TN-02 和 Step 2 的 situation 判断是否需要不同功能块。
-2. 按所触发的 B 规划尚有自由度的块序：B1 对象/修改/可查表达；B2 修订/局部关系/新式；B3 前提/中间式/末步依据；B4 action/setup/locator/observation；B5 baseline capability/区分维度；B6 一个实质块转另一个实质块。B6 识别的是实质功能，不凭某项 manuscript action 看起来独立就切断作者明确确认的同一科学回应链。C1–C6 只供回查，不给固定组织。
-3. 用 TN-03 把同一子问题下实际需要的实验、推导或图表组成 evidence blocks；用 TN-04/05 规划 figure、caption、正文与 observation。
-4. 若确需结论，调用 TN-07 与 SD-01 检查其直接证据、范围及非重复；不为每个 block 强制生成 conclusion。用 TN-08/A2 按独立任务数量估计功能块和篇幅，不从作者的停止位置推断充分覆盖。
+1. **整条 Response：** 用 Step 3 的 evidence gate 修订 Step 2 的初步核心判断，先确定直接回答、必需判断及其有序关系，再决定整条回复如何从实质入口走向证据或解释。按作者已确认的项目路线保留必要先后；其余顺序由 reviewer 的判断需求、理解依赖和 TN-02 决定。用 TN-01/A1 规划尽快进入实质；必要的最小框架可以先于细节，不表示所有 action/evidence 都应提前。
+2. **各 Part：** 为每个实际需要的 Part 确定整体回答任务、所承接的前一状态、若有后一 Part 时需要交接的问题，以及对应的核心判断和证据。按所触发的 B 规划尚有自由度的功能块：B1 对象/修改/可查表达；B2 修订/局部关系/新式；B3 前提/中间式/末步依据；B4 action/setup/locator/observation；B5 baseline capability/区分维度；B6 一个实质块转另一个实质块。B6 识别的是实质功能，不凭某项 manuscript action 看起来独立就切断作者明确确认的同一科学回应链。C1–C6 只供回查，不给固定组织。
+3. **各 Paragraph：** 在每个 Part 内先确定各段要完成的局部判断或推进动作、需要的理由或 evidence、段间如何承接，再决定是否需要下一段。用 TN-03 把同一子问题下实际需要的实验、推导或图表组成 evidence blocks；用 TN-04/05 规划 figure、caption、正文与 observation。Part 和 Paragraph 的数量及形式由实际任务决定，不预设标题、编号或篇幅。
+4. **段内连续句：** 在写英文前，按本段任务规划第一句如何进入实质、后续句分别回应前句留下的什么需求、何时进入条件、推导、设置、图表、观察或可查位置，以及本段如何结束或交给下段。此处只确定语义推进，不预设句数或套用连接词。
+5. 若确需结论，调用 TN-07 与 SD-01 检查其直接证据、范围及非重复；不为每个 block 强制生成 conclusion。用 TN-08/A2 按独立任务数量估计功能块和篇幅，不从作者的停止位置推断充分覆盖。
 
 先完成这一步，再写英文；不要从 phrase 开始拼接。
 
 ## Step 5 起草
 
-按 `02` 的 SL-01 至 SL-11 起草。先根据 reviewer situation、当前功能块和上一句留下的 semantic state 确定下一句的认知任务，再依次决定：
+沿 Step 4 已确定的整条逻辑、Part/Paragraph 职责和段内连续推进，从各段第一句起草到该段任务完成；每句均须接续前句留下的实际问题，或明确进入下一局部任务。逐句按 `02` 的 SL-01 至 SL-11 落实句法与用词。根据 reviewer situation、当前段落任务和上一句留下的 semantic state 确定下一句的认知任务，再依次决定：
 
 1. 谁承担语法主语：作者动作、技术对象、display evidence，还是对紧邻证据的 inference；
 2. 使用哪个具体动作/关系动词，以及 completed revision 与稳定事实所需的时态；
@@ -59,7 +61,7 @@ SD-04 贯穿全流程：发现问题后检查有证据定义的同类位置，�
 
 礼貌承接后尽快进入可回答的对象、技术事实或动作；purpose 仅在有实际解释作用时出现。新增实验由 action 进入具体 setup、locator 和 observation；结果句显化有歧义的对象，Figure/Table 不必作语法主语，也不要求每个结果都给数字。条件与 baseline 贴近受其限定的 claim 或比较维度，术语连续复现，连接词只标真实关系；location 可在摘录或证据前后。若写结论，其证据范围另审。句法槽位用于组织信息，不从 TIE 抽取整句模板。
 
-对准备进入最终 Response 的每句话或信息，判断它是否真实帮助 reviewer 回答当前 concern、理解必要逻辑或 evidence、判断或限定 conclusion、消除真实歧义、核查 evidence 或 manuscript revision 的具体位置，或承担必要且简短的礼貌承接。有真实功能则保留最小充分表达；功能成立但表达过量则压缩；只对内部分析、规划或审计有用则删除。**内部分析需要 ≠ reviewer 必须看到。**“下面我们将……”等流程预告不能仅凭宽泛的“导航”作用保留；帮助 reviewer 核查 evidence 或 manuscript revision 的具体定位可以保留。
+上述有序判断、Part/Paragraph 划分和逐句规划均是内部生成机制，不得机械外显为 reviewer-facing 的论点清单、标题或流程预告。对准备进入最终 Response 的每句话或信息，判断它是否真实帮助 reviewer 回答当前 concern、理解必要逻辑或 evidence、判断或限定 conclusion、消除真实歧义、核查 evidence 或 manuscript revision 的具体位置，或承担必要且简短的礼貌承接。有真实功能则保留最小充分表达；功能成立但表达过量则压缩；只对内部分析、规划或审计有用则删除。**内部分析需要 ≠ reviewer 必须看到。**“下面我们将……”等流程预告不能仅凭宽泛的“导航”作用保留；帮助 reviewer 核查 evidence 或 manuscript revision 的具体定位可以保留。
 
 起草时不复制 TIE 句子，不补造实验、结果、citation、figure、line/page 或修改状态。
 
@@ -73,16 +75,13 @@ SD-04 贯穿全流程：发现问题后检查有证据定义的同类位置，�
 
 ### 6.1 TIE-style audit
 
-- reviewer situation 是否与所调用 A/B 机制匹配，C1–C6 是否仅作参考？
-- 首段是否尽快落到答案/动作/evidence？
-- 下一段或下一句是否回应上一状态留下的实际问题，并形成对应的 B1–B6 功能块？
-- evidence blocks 是否消除重复又保留独有 evidence？
-- 图、caption 与正文是否各司其职？
-- 有图表时是否从 locator 读出具体 observation？
-- 每句的主语、核心动词、时态和限定结构是否与其语义责任对应；condition 与 baseline 是否贴近相关 claim 或比较维度？
-- 连接词是否表达真实逻辑，技术名词是否稳定复现，回指是否唯一？
-- manuscript location 或摘录是否可追溯，且未被固定为末句？
-- 每句话或信息是否通过 Step 5 的 reviewer-facing necessity gate：真实功能以最小充分形式表达，过量内容已压缩，仅供内部分析、规划或审计的内容已删除，流程预告未凭宽泛“导航”理由保留？
+严格按下列层级自上而下检查。每层先判断其任务是否完成，再按相应 reviewer situation 对照已验证的 TIE A/B 机制和作用相近的 scene；C1–C6 仅作单例参考。上层未通过时，不以局部句子流畅代替上层修复；发现问题只回到该层及受影响链条。
+
+1. **整条 Response：** 是否准确回答 reviewer 的真实关切；有序核心判断和整体逻辑是否由当前问题、证据与已确认的项目路线支持；首段是否尽快落到答案、动作或核心 evidence？
+2. **各 Part：** 每部分是否承担明确的整体任务、对应必要的核心判断；前后 Part 是否接续实际理解需求或转入另一实质任务，而非只靠编号、连接词或动作发生次序；evidence blocks 是否集中公共信息且保留独有 evidence？
+3. **各 Paragraph：** 每段是否有清楚的局部判断或推进动作，所需理由、推导或 evidence 是否放在恰当位置；段数与分段是否由任务决定，段尾是否自然完成本段任务或交给下段？有图表时，figure、caption 与正文是否各司其职？
+4. **段内连续句子：** 从第一句顺读到最后一句，下一句是否回应前句留下的实际问题；必要条件、前提、setup、locator、observation、推论或修改位置是否无跳步地接续？有图表时是否从 locator 读出具体 observation；location 或摘录是否可追溯且未被固定为末句？
+5. **单句与具体用词：** 每句的主语、核心动词、时态和限定结构是否与其语义责任对应；condition 与 baseline 是否贴近相关 claim 或比较维度；连接词是否表达真实逻辑，技术名词是否稳定复现，回指是否唯一？每句话或信息是否通过 Step 5 的 reviewer-facing necessity gate，并避免把内部规划机械外显？
 
 ### 6.2 supporting audit
 

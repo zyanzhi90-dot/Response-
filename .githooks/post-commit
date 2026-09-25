@@ -1,0 +1,14 @@
+#!/bin/sh
+set -eu
+
+# Push every completed local commit for this repository.
+# The agent remains responsible for staging only the files authorized in the
+# current task; this hook does not add or modify files.
+branch=$(git symbolic-ref --quiet --short HEAD || exit 0)
+remote=$(git config --get "branch.${branch}.remote" || true)
+
+if [ -z "$remote" ]; then
+  exit 0
+fi
+
+git push "$remote" "$branch"
