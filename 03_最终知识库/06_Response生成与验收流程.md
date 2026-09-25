@@ -14,9 +14,11 @@ SD-04 贯穿全流程：发现问题后先定位其所在层级，检查有证�
 
 ## Step 2 建立 concern card
 
+建 card 前先顺读 reviewer 的完整 argument：辨认用于支撑质疑的事实、比较与推理，读出 reviewer 据此形成的判断，再确定真正要求作者回答、解释、证明、补证据或修改的 response obligations。论据不因单独成句就自动成为新 concern；只有它本身要求处理，或不处理就无法闭合最终质疑时，才纳入核心回答链。内部可记录必要论据的核验任务，但不据其数量决定 Part 或段数。
+
 用最少字段记录：
 
-- reviewer 真正要判断什么；
+- reviewer 真正要判断什么，以及必须分别闭合的 response obligations；
 - reviewer situation 属于 B1 局部 correction、B2 局部 equation/definition、B3 缺推导、B4 新实验、B5 comparison、B6 多 concern 中哪一种或哪几种；
 - 一句话直接答案；
 - 支撑直接答案所需的核心判断及其初步先后依赖；数量由 concern 和证据决定，不把内部判断列表写成对 reviewer 的固定提纲；
@@ -26,7 +28,7 @@ SD-04 贯穿全流程：发现问题后先定位其所在层级，检查有证�
 - 当前状态是已核验、仅报告未核验、计划中还是缺失。
 - **project-specific response constraints：** 只记录作者明确确认的 scientific mainline、concern decomposition、主要先后关系和必要推理依赖；未明确规定顺序时，不自行补成顺序约束。
 
-若 comment 含多个独立要求，触发 CS-01。不要把广义 concern 缩成最容易回答的一小部分。此时按已验收 realization 基准选 A1–A6 的跨场景关系和实际触发的 B1–B6；核心 proof、novelty、完整多控制器比较、method motivation、明确 Table 请求或定量噪声链若只匹配 C1–C6，回查原 scene，不能按单例生成固定路径。
+若 comment 含多个独立 response obligations，触发 CS-01。不要把广义 concern 缩成最容易回答的一小部分，也不要把每项 supporting premise 机械拆成独立要求。此时按已验收 realization 基准选 A1–A6 的跨场景关系和实际触发的 B1–B6；核心 proof、novelty、完整多控制器比较、method motivation、明确 Table 请求或定量噪声链若只匹配 C1–C6，回查原 scene，不能按单例生成固定路径。
 
 ## Step 3 做 evidence gate
 
@@ -59,7 +61,9 @@ SD-04 贯穿全流程：发现问题后先定位其所在层级，检查有证�
 4. 前后句是 uptake、原因、增加、转折、实例、推论还是定位关系；
 5. 核心技术名词是否准确复现，代词和 `this/these/the above` 是否只有一个清楚先行项。
 
-礼貌承接后尽快进入可回答的对象、技术事实或动作；purpose 仅在有实际解释作用时出现。新增实验由 action 进入具体 setup、locator 和 observation；结果句显化有歧义的对象，Figure/Table 不必作语法主语，也不要求每个结果都给数字。条件与 baseline 贴近受其限定的 claim 或比较维度，术语连续复现，连接词只标真实关系；location 可在摘录或证据前后。若写结论，其证据范围另审。句法槽位用于组织信息，不从 TIE 抽取整句模板。
+关键量首次进入正文时，用当前项目确定的技术名称与正式符号建立对应；后文在新的 Paragraph/evidence block、关键 criterion、主要结果读取、comparison、claim 或 conclusion 处，按 reviewer 的阅读需要就近保留“含义＋符号”，紧邻重复或局部公式推导可简化。选择每个条件、方式、比较和范围短语时，同时调用 `04` 的 SD-01/SD-03：它修饰哪个实际对象、操作、测试条件、baseline 或 metric，覆盖哪些 evidence，支持多强的 claim。`with/under/by/across/all/selected/generally/respectively` 等词只有与 primary evidence 的真实关系一致时才可使用；不能让语言顺畅掩盖实验层级或 scope 的变化。
+
+礼貌承接后尽快进入可回答的对象、技术事实或动作；purpose 仅在有实际解释作用时出现。新增实验由 action 进入具体 setup、locator 和 observation；结果句显化有歧义的对象，Figure/Table 不必作语法主语，也不要求每个结果都给数字。条件与 baseline 贴近受其限定的 claim 或比较维度，术语连续复现，连接词只标真实关系；location 可在摘录或证据前后。若写结论，在该句同步按 SD-01 核对证据范围，并于 Step 6 汇总跨句 claim 检查。句法槽位用于组织信息，不从 TIE 抽取整句模板。
 
 上述有序判断、Part/Paragraph 划分和逐句规划均是内部生成机制，不得机械外显为 reviewer-facing 的论点清单、标题或流程预告。对准备进入最终 Response 的每句话或信息，判断它是否真实帮助 reviewer 回答当前 concern、理解必要逻辑或 evidence、判断或限定 conclusion、消除真实歧义、核查 evidence 或 manuscript revision 的具体位置，或承担必要且简短的礼貌承接。有真实功能则保留最小充分表达；功能成立但表达过量则压缩；只对内部分析、规划或审计有用则删除。**内部分析需要 ≠ reviewer 必须看到。**“下面我们将……”等流程预告不能仅凭宽泛的“导航”作用保留；帮助 reviewer 核查 evidence 或 manuscript revision 的具体定位可以保留。
 
@@ -77,13 +81,15 @@ SD-04 贯穿全流程：发现问题后先定位其所在层级，检查有证�
 
 严格按下列层级自上而下检查。每层先判断其任务是否完成，再按相应 reviewer situation 对照已验证的 TIE A/B 机制和作用相近的 scene；C1–C6 仅作单例参考。上层未通过时，不以局部句子流畅代替上层修复；发现问题只回到该层及受影响链条。
 
-1. **整条 Response：** 是否准确回答 reviewer 的真实关切；有序核心判断和整体逻辑是否由当前问题、证据与已确认的项目路线支持；首段是否尽快落到答案、动作或核心 evidence？
+1. **整条 Response：** 是否先正确还原 reviewer 的完整 argument，区分 supporting premises 与真正的 response obligations，再准确回答其真实关切；有序核心判断和整体逻辑是否由当前问题、证据与已确认的项目路线支持；首段是否尽快落到答案、动作或核心 evidence？
 2. **各 Part：** 每部分是否承担明确的整体任务、对应必要的核心判断；前后 Part 是否接续实际理解需求或转入另一实质任务，而非只靠编号、连接词或动作发生次序；evidence blocks 是否集中公共信息且保留独有 evidence？
 3. **各 Paragraph：** 每段是否有清楚的局部判断或推进动作，所需理由、推导或 evidence 是否放在恰当位置；段数与分段是否由任务决定，段尾是否自然完成本段任务或交给下段？有图表时，figure、caption 与正文是否各司其职？
 4. **段内连续句子：** 从第一句顺读到最后一句，下一句是否回应前句留下的实际问题；必要条件、前提、setup、locator、observation、推论或修改位置是否无跳步地接续？有图表时是否从 locator 读出具体 observation；location 或摘录是否可追溯且未被固定为末句？
-5. **单句与具体用词：** 每句的主语、核心动词、时态和限定结构是否与其语义责任对应；condition 与 baseline 是否贴近相关 claim 或比较维度；连接词是否表达真实逻辑，技术名词是否稳定复现，回指是否唯一？每句话或信息是否通过 Step 5 的 reviewer-facing necessity gate，并避免把内部规划机械外显？
+5. **单句与具体用词：** 对每句、每个会改变科学含义的关键 phrase，**同时调用 `02` 的 SL 语言实现与 `04` 的 SD-01/SD-03 科学核对**。主语、核心动词、时态和连接词是否承担正确语义责任；关键位置的技术含义与符号是否可直接读懂，回指是否唯一？实际实验对象、测试条件、baseline、metric、modifier scope、evidence range 和 claim scope 是否与 primary evidence 一致；范围词或介词短语究竟修饰什么，有无把 parameter/setting 改称其他实验层级或扩大 evidence？每句话或信息是否通过 Step 5 的 reviewer-facing necessity gate，并避免把内部规划机械外显？**语言 realization 与 evidence-semantic correctness 均通过，单句层才可 PASS；语法自然不能代替科学附着核验。**
 
 ### 6.2 supporting audit
+
+此处汇总跨句、跨图表和整条回复的事实与质量门槛；不替代 6.1 第 5 层已经同步执行的 phrase-level 科学核对。
 
 - 所有 concern 是否各有直接 evidence 或显式缺口？
 - 若有 conclusion，claim 是否超出测试/证明范围；是否隐藏会改变 claim 的实质不利结果？

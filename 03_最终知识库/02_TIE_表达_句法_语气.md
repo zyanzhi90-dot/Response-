@@ -85,6 +85,8 @@ TIE 风格的可迁移部分不是某组固定短语，而是句子功能清楚�
 
 **词汇连续性：** TIE 在证明中持续复现 `PE condition`、`matrix D`，在实验中持续复现 `disturbance`、`estimation results`、`comparison results`。可迁移的是准确重复核心技术名词，而不是为避免重复轮换近义词。
 
+**符号可读性：** 关键量首次进入 reviewer-facing prose 时，给出来自当前项目材料的清楚技术名称与正式符号；之后保持同一名称与符号的对应。在新的 Paragraph 或 evidence block、关键 criterion、主要结果读取、comparison、claim 和 conclusion 等需直接判断含义的位置，优先让技术含义与符号同时可见，不让连续表述退化为裸符号解码。紧邻重复、局部公式推导或上下文已无歧义时可只用符号；不要求每次重写全称。TIE 的技术名词连续复现支持可读性选择，具体名称与符号仍由当前项目证据决定。
+
 **衔接：** TIE 常借主语变化标记段落阶段：作者动作 → 技术对象/设置 → evidence → inference；这是一种清楚的推进倾向，不要求每段逐项复现。只有先行项唯一且紧邻时，才宜用代词或 `this/these`。
 
 **不可迁移：** 同一技术对象在近义词间漂移；多先行项后使用 `it/this/those`；每句都用 `we`，使 evidence 看起来只是作者判断。
@@ -104,6 +106,8 @@ TIE 风格的可迁移部分不是某组固定短语，而是句子功能清楚�
 **不可迁移：** 以 `Generally`、`It is well known that` 等宽泛起句代替当前定义；模糊的 `the above-mentioned equation`；顺序不清仍使用 `respectively`。
 
 **来源边界：** `where/with/under` 等透明关系表达是 TIE 可迁移的稳定观察；避免空泛垫句、修正搭配和在必要时拆句，是为保证专业英语与指代清楚所做的最小规范化。
+
+**科学附着：** `with/under/by` 等结构除了语法通顺，还必须确实修饰所写的对象、操作或条件；`respectively` 所连的两组对象须与实际 evidence 一一对应。用 `04` 的 SD-01/SD-03 核对这些关系，不从介词形式推断实验层级或证据范围。
 
 **TIE anchors：** R1-2 的 disturbance 定义，R2-3 的 SVD 矩阵定义，R2-5 的 auxiliary term 与两类 eigenvalue，R4-6 的表格列说明。
 
@@ -188,6 +192,8 @@ TIE 风格的可迁移部分不是某组固定短语，而是句子功能清楚�
 
 **来源边界：** baseline—metric—condition 的邻近组织是 TIE 比较段可迁移的功能倾向；降低无证据强化词、修正比较搭配和收紧 claim 属于最小专业化修正，不是对 TIE 原句的复制。
 
+**范围词核对：** 在比较和结论句中，`across/all/selected/generally` 等词会改变覆盖范围或判断强度。按 `04` 的 SD-01 核对它们究竟限定哪些对象、设置、baseline 与 metric，是否对应实际 evidence range；语法自然不等于范围正确。这是科学正确性的执行 gate，不是新增 TIE 固定词表。
+
 **TIE anchors：** R3-1、R3-2、R4-3、R4-5、R4-6；R2-2 提供数学强度的对照。
 
 ### SL-11 用紧邻回指连接推论、摘录或修改位置
@@ -212,6 +218,7 @@ SL-01～SL-11 是本文件唯一的 sentence-level knowledge layer。使用时�
 - **功能连续，而非形式齐全。** 下一句应回答上一句留下的必要问题，但并非每条 response 都要出现感谢、uptake、purpose、figure reading、synthesis 和 location。短纠错可由动作句直接闭合，复杂证明或实验才展开相应链条。
 - **节奏由任务决定。** 动作或判断宜尽早落地；必要条件、机制与 evidence 随后展开。局部问题通常短，独立任务增多时功能块和篇幅往往增加；短句、中等句和局部长句均可，TIE 的表面句长、固定语态、固定停止位置和重复短语不构成规则。完成核验后停止由 `06` 作为工作流程门槛执行。
 - **语气服从证据。** 保持礼貌、就事论事和非防御；不同意时准确承接 concern，再用定义、scope 或 evidence 说明。比较与结论的强度不得超过可核验依据。
+- **语言与科学关系同步。** `02` 决定句子如何实现；每个关键 phrase 的实际实验对象、测试条件、baseline、metric、修饰范围、evidence range 与 claim scope 同时由 `04` 和当前项目 primary evidence 核对。不能先把句子判为语言 PASS，再把科学附着留给另一轮整体审计。
 - **区分观察与修正。** SL 中标为 TIE 稳定倾向的内容可作为表达指纹；为修复原文语法、搭配、指代或过强 claim 而采取的自然化处理，仅保证专业正确性，不得宣称为 TIE 的固定写法。
 
 ## 4. 句法级 TIE-style audit
@@ -223,12 +230,14 @@ SL-01～SL-11 是本文件唯一的 sentence-level knowledge layer。使用时�
 3. 语法主语是否承担了正确责任：作者动作、技术事实、display evidence 或 inference？
 4. 动词是否具体对应 correction、addition、derivation、test、display 或 inference，而非泛称“improved/addressed”？
 5. 时态是否如实表达 revision 状态和事实时间关系，而不是机械套用 present perfect 或 present simple？
-6. 指代对象是否唯一，核心技术名词是否保持准确复现而非同义改写？
-7. 条件、baseline、metric 和 scope 是否靠近其限定的比较或 claim？
+6. 指代对象是否唯一，核心技术名词与符号是否稳定对应；在新的段落/证据块及关键判断句中，reviewer 能否直接读出符号的技术含义，而无需反复回查定义？
+7. 对每个关键 phrase，条件、baseline、metric 与 scope 是否贴近并准确附着于其所限定的对象、比较或 claim？`with/under/by/across/all/selected/generally/respectively` 等表达各修饰什么，是否与 primary evidence 中的真实实验层级和范围一致？
 8. 连接词是否标记真实关系，而不是为了表面流畅？
 9. 删除后是否仍能无跳步地理解和核验？若能，删去或并入邻句。
 10. 它是否把 TIE 的一种主语、语态、时态、figure/result 表达或连接形式误当成唯一规则？
 11. 它是否复制了 TIE 的语法问题、非地道搭配、冗余动词或过强语气？若是，只做功能等价的最小专业化修正，不把修正后的形式反标为 TIE 指纹。
+
+逐句逐词验收须同时调用本文件的语言 realization 与 `04` 的 SD-01/SD-03，核对实际对象、条件、baseline、metric、modifier scope、evidence range 和 claim scope。**sentence-level PASS = 语言实现正确且科学附着正确**；任何一边未核实或不成立，都不能凭语法通顺判 PASS。
 
 ## 5. 用未作为主要示例的 TIE 句段反向解释
 
