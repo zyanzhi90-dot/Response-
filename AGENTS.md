@@ -102,6 +102,7 @@ TIE 中的原始缺陷、漏答、错号、非地道表达或过强 claim 不因
 - 知识组织方式；
 - 分阶段执行；
 - source / evidence / claim discipline；
+- 不改变 TIE 风格目标的术语准确性、语义清楚和自然科学英语等专业质量核查；
 - validation、QA、handoff 等知识工程方法。
 
 **不得提供或覆盖 TIE 的 Response 文风、句式、组织规律，也不得建立第二套写作体系。**

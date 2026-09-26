@@ -219,7 +219,7 @@ SL-01～SL-11 是本文件唯一的 sentence-level knowledge layer。使用时�
 - **节奏与单句负载由任务决定。** 动作或判断宜尽早落地；必要条件、机制与 evidence 随后展开。若把多个原本需要依次建立的目的、设置、比较、结果或推论挤在一句中，以致主要命题或限定附着不能一遍读清，就按实际认知步骤拆成相邻句；必要的对象与条件仍可同句表达。局部问题通常短，独立任务增多时功能块和篇幅往往增加；短句、中等句和局部长句均可，不设词数、固定语态或固定停止位置。完成核验后停止由 `06` 作为工作流程门槛执行。
 - **语气服从证据。** 保持礼貌、就事论事和非防御；不同意时准确承接 concern，再用定义、scope 或 evidence 说明。比较与结论的强度不得超过可核验依据。
 - **语言与科学关系联合判定。** `02` 按 §4 比较 TIE realization，`04` 和当前项目 primary evidence 核对科学关系。关键短语包括影响功能承载、对象命名和可读性的表达，不只包括改变科学含义的短语。事实待核实不妨碍发现当前文字中的表达问题；语言自然也不能替代科学附着核验。
-- **区分观察与修正。** SL 中标为 TIE 稳定倾向的内容可作为表达指纹；为修复原文语法、搭配、指代或过强 claim 而采取的自然化处理，仅保证专业正确性，不得宣称为 TIE 的固定写法。
+- **区分观察与修正。** SL 中标为 TIE 稳定倾向的内容可作为表达指纹；准确命名、自然搭配、清楚附着和适当证据强度也是 reviewer-facing 英语的专业底线。为修复 TIE 原文或当前草稿中的语言与科学缺陷所作的最小修正，不得宣称为该作者的固定写法。
 
 ## 4. Sentence/Phrase 的 TIE realization 比较
 
@@ -227,7 +227,7 @@ SL-01～SL-11 是本文件唯一的 sentence-level knowledge layer。使用时�
 
 1. **脱离原措辞重建 meaning。** 暂不沿用现有主语、动词和名词组合，依据当前句应承担的功能、上下句需求、作者已确认路线和 primary evidence，确定必须表达的对象、动作、关系、条件、baseline、metric、证据范围及必要承接。用 `04` 核对科学对象之间的真实关系、可支持的 claim 强度和事实状态；事实待核实的部分保持未核实，不让原句的表面通顺预先决定其应怎样实现。
 2. **独立形成 shadow realization。** 默认查 `04_TIE句子级表达重建/00_TIE_2621_sentence_realization基准.md` 中最接近的同功能 A/B 证据，必要时回查 TIE PDF；C 类只作匹配情形的单例参考。在第 1 步已经确定的科学约束内，依据 TIE 证据独立决定本句的功能承载、对象命名、主语与核心动词、信息位置、限定关系、技术符号在当前阅读位置的可读性、相邻句衔接及停止位置。SL-01～SL-11 只作相关辅助判据；不从原句替换几个词来制造 shadow，也不复制 TIE 的个案事实、source defects 或固定句型。
-3. **回到原句作 differential comparison。** 先按原句的实际读法确定它指向什么对象、让哪个短语修饰什么、承诺何种证据范围与判断强度，不用作者意图替原句补全；再与第 1 步的 meaning 和第 2 步的同功能 TIE realization 比较，按 §3 核对主要命题与单句负载，说明真实差异及当前上下文的依据。原句 grammatically correct、understandable、recoverable 或 generally natural 不足以直接 PASS；shadow 与原句措辞不同本身也不足以 FAIL。没有足够匹配证据时，不凭一般英语偏好宣称 TIE-specific failure。
+3. **回到原句作 differential comparison。** 先按原句的实际读法确定它指向什么对象、让哪个短语修饰什么、承诺何种证据范围与判断强度，不用作者意图替原句补全；再与第 1 步的 meaning 和第 2 步的同功能 TIE realization 比较，按 §3 核对主要命题与单句负载，说明真实差异及当前上下文的依据。原句 grammatically correct、understandable、recoverable 或 generally natural 不足以直接 PASS；shadow 与原句措辞不同本身也不足以 FAIL。若缺少足够接近的 TIE 证据，仍修正可由当前对象关系和专业英语判断出的不清楚、不准确或不自然表达，但不把这种修正冒称为 TIE-specific 偏好。
 
 比较须落到实际承载意义的词和短语：名词组是否自然、准确地命名当前方法、任务、设置、指标或比较；主语和核心动词是否让正确对象承担真实动作；限定语、介词结构与从句实际附着在哪个对象和 evidence range；代词与符号在当前阅读位置是否一遍可读；句首、句尾及信息顺序是否完成这一句在相邻句中的功能。对人为压缩或元叙述式组合，即使科学事实没有改变，也要判断是否造成不专业的命名或多余的读者解码。用同功能 TIE 句段比较这些选择，而不是只替换已知的 failure 词组、核对语法，或要求出现相同前缀、语态和固定句型。TIE 自身的语法、搭配、冗余或过强 claim 缺陷仍只作最小专业化修正。
 
@@ -260,4 +260,4 @@ SL-01～SL-11 是本文件唯一的 sentence-level knowledge layer。使用时�
 - **分号的同作者语料校准：** 江 TIE_2621 的 reviewer-response 作者正文中未观察到 semicolon。当分号把两个本来承担不同 semantic responsibilities 的独立 response functions 强行接成一句，而拆成相邻句同样自然、清楚时，优先考虑句号，以贴近该作者的实际 sentence rhythm。这仅是 corpus-level same-author soft calibration，不是顶刊禁用 semicolon、academic-English 通则或 A/B/C mechanism；不要求删除所有 semicolon。
 - **固定语态和固定句长：** TIE 同时使用 active/passive、短答和长推导，不能从表面分布推出统一语态或字数规则。
 
-**Provenance:** TN-06 汇入 CK-001、CK-008、CK-010、CK-016、CK-018；SL-01 至 SL-11 均由 TIE PDF 多个 reviewer-response 上下文交叉支持。Nature/ARS 未作为语言样本，只保留 factuality 和 claim boundary 的 supporting 职责。
+**Provenance:** TN-06 汇入 CK-001、CK-008、CK-010、CK-016、CK-018；SL-01 至 SL-11 均由 TIE PDF 多个 reviewer-response 上下文交叉支持。Nature Writing/Polishing 的术语稳定、单句负载和清楚表达只支持专业质量核查，不提供 Response 句式；固定 10–30 词、固定段首 claim 等稿件规则不迁移。
