@@ -25,8 +25,7 @@
 1. 集中说明实际需要的共同目的和公共设置；
 2. 连续呈现相关图组或表格；
 3. 保留各实验不可替代的条件、数值、结果和实质不利比较；
-4. 集中读出关键现象；
-5. 读出与 concern 有关的 observation；若确需结论，再由 `04` 核查其 evidence boundary。
+4. 集中读出与 concern 有关的关键 observation；若确需结论，再由 `04` 核查其 evidence boundary。
 
 不要让每张图各自重启完整 mini-response。若两组实验回答不同判断标准，应分成两个 block，而不是为了形式合并。
 
