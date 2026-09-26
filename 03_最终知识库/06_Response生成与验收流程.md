@@ -1,123 +1,159 @@
 # Response 生成与验收流程
 
-这是未来 Agent 的主执行入口。流程以一条 comment 为单位运行；多位 reviewer 或复合 comment 的附加处理见 `07`。
+本文件是 Draft、Audit、Revise 的唯一执行协议。三种模式共用同一层级、判据、证据门槛和停止条件，只改变每层的操作：Draft 形成计划并生成；Audit 对现有文本完整检查而不修改；Revise 定位根因、更新必要规划并定点修改。Point Fix 只是 Revise 的范围约束。
 
-## SD-04 surgical audit 与完成门槛
+协议以一条 comment 为基本任务单元，按以下依赖运行：
 
-SD-04 贯穿全流程：发现问题后先定位其所在层级，检查有证据定义的同类位置，只修改该层及受影响链条；完成后分别报告写作、事实、版本和提交状态，不把其中一种通过冒充全部完成。
+**任务范围与版本 → Reviewer argument → 项目证据及作者约束对齐 → Whole Response 与全局 Part map → 逐 Part 规划 Paragraph → 逐 Paragraph 检查连续推进并处理全部句子 → Part 回看 → 全文整合**
 
-## Step 1 读取并锁定材料
+Part、Paragraph、句子、标题、结论及具体句式均不设固定数量或模板。简单回复可以在很少的文字中合并承载多个层级判断，但不能省略相应判断。
 
-保留 reviewer comment 原文。识别当前稿件版本、正式实验/图表、作者确认的动作、可核查修改位置和外部来源；同时识别是否存在作者明确确认的 project-specific response plan 及其确认范围。先写清各来源职责；若版本关系不明，不进行精确编号或完成声明。
+## 1. 任务范围、版本与运行记录
 
-**产物：** comment 原文、source map、当前版本标识、作者方案的确认状态、未决事实。
+先锁定本轮模式、处理范围和输入版本：保留 reviewer comment 原文，识别 Response、稿件、正式实验、图表、citation 和作者方案的当前版本，记录真实修改状态及可核查位置。版本关系不明时，不给出精确定位或完成声明。
 
-## Step 2 建立 concern card
+运行记录必须绑定当前文本和材料版本，使接手者能够恢复：
 
-建 card 前先顺读 reviewer 的完整 argument：辨认用于支撑质疑的事实、比较与推理，读出 reviewer 据此形成的判断，再确定真正要求作者回答、解释、证明、补证据或修改的 response obligations。论据不因单独成句就自动成为新 concern；只有它本身要求处理，或不处理就无法闭合最终质疑时，才纳入核心回答链。内部可记录必要论据的核验任务，但不据其数量决定 Part 或段数。
+- 本轮模式、授权范围和输入版本；
+- reviewer argument、response obligations 和必要判断依据；
+- Whole Response 主线、全局 Part map 及当前 Part/Paragraph 的上层语境；
+- 已处理单元、覆盖状态及足以复核关键判断的简要依据；
+- 未决事实、冲突、当前阶段和因修改而失效的范围。
 
-用最少字段记录：
+复杂正式审计保留一份可恢复的任务级记录，不为每层建立独立文件。简单任务可使用紧凑内联记录。覆盖记录用于证明可遍历、可定位和可继续，不能被宣称为语义零漏检保证。
 
-- reviewer 真正要判断什么，以及必须分别闭合的 response obligations；
-- reviewer situation 属于 B1 局部 correction、B2 局部 equation/definition、B3 缺推导、B4 新实验、B5 comparison、B6 多 concern 中哪一种或哪几种；
-- 一句话直接答案；
-- 支撑直接答案所需的核心判断及其初步先后依赖；数量由 concern 和证据决定，不把内部判断列表写成对 reviewer 的固定提纲；
-- 需要什么动作或直接 evidence；
-- conclusion 在什么条件下成立；
-- 稿件改动或位置；
-- 当前状态是已核验、仅报告未核验、计划中还是缺失。
-- **project-specific response constraints：** 只记录作者明确确认的 scientific mainline、concern decomposition、主要先后关系和必要推理依赖；未明确规定顺序时，不自行补成顺序约束。
+## 2. Reviewer argument：先确定所问问题
 
-若 comment 含多个独立 response obligations，触发 CS-01。不要把广义 concern 缩成最容易回答的一小部分，也不要把每项 supporting premise 机械拆成独立要求。此时按已验收 realization 基准选 A1–A6 的跨场景关系和实际触发的 B1–B6；核心 proof、novelty、完整多控制器比较、method motivation、明确 Table 请求或定量噪声链若只匹配 C1–C6，回查原 scene，不能按单例生成固定路径。
+先顺读 reviewer 的完整论证，区分：支撑质疑的事实或比较、reviewer 据此形成的判断、以及真正要求作者回答、解释、证明、补证据或修改的 response obligations。Supporting premise 不因单独成句就自动成为新 concern；只有它本身需要处理，或不处理就无法闭合最终质疑时，才进入核心回答链。
 
-## Step 3 做 evidence gate
+用最少信息记录：
 
-对每个 concern 执行 SD-01：判断标准、动作、evidence 和 claim 是否直接对应。
+- reviewer 真正要判断什么；
+- 必须分别闭合的 obligations；
+- 支撑这些 obligations 的关键论据和判断标准；
+- 初步直接答案，以及使其成立所需的动作或 evidence；
+- 当前理解中确有歧义或待核实之处。
 
-- evidence 足够：进入组织。
-- 只部分覆盖：明确已覆盖与未覆盖部分，并缩小 claim。
-- evidence 缺失：保留可见缺口或作者输入需求，不起草完成式语句。
-- 存在实质不利结果：保留，并据此校准 conclusion。
+Reviewer 理解先于回答策略和现有证据对齐。只有 reviewer 原文、明确上下文或可核查的文本关系支持时，才能有记录地修正初始理解；不得因为现有证据只够回答较窄问题，就反向缩窄 reviewer 的问题。复合 comment 触发 `07` 的 CS-01；不要把广义 concern 缩成最容易回答的一部分，也不要把每个 supporting premise 机械拆成独立义务。
 
-## Step 4 规划 TIE-native 主干
+## 3. 项目证据与作者约束对齐
 
-先核对拟采用的组织是否改变 Step 2 记录的 project-specific response constraints。若作者方案与 reviewer 原 concern、Step 3 的 evidence/claim 检查、数学事实或前后逻辑发生明确冲突，标记冲突及原因，保留原方案并等待作者决定；不得静默重排，也不得机械照写。只有作者未规定该处顺序，或用户明确授权重新优化方案时，才由 TIE-native 机制选择主要先后关系。
+### 3.1 Source map 与 evidence gate
 
-1. **整条 Response：** 用 Step 3 的 evidence gate 修订 Step 2 的初步核心判断，先确定直接回答、必需判断及其有序关系，再决定整条回复如何从实质入口走向证据或解释。按作者已确认的项目路线保留必要先后；其余顺序由 reviewer 的判断需求、理解依赖和 TN-02 决定。用 TN-01/A1 规划尽快进入实质；必要的最小框架可以先于细节，不表示所有 action/evidence 都应提前。
-2. **各 Part：** 为每个实际需要的 Part 确定整体回答任务、所承接的前一状态、若有后一 Part 时需要交接的问题，以及对应的核心判断和证据。按所触发的 B 规划尚有自由度的功能块：B1 对象/修改/可查表达；B2 修订/局部关系/新式；B3 前提/中间式/末步依据；B4 action/setup/locator/observation；B5 baseline capability/区分维度；B6 一个实质块转另一个实质块。B6 识别的是实质功能，不凭某项 manuscript action 看起来独立就切断作者明确确认的同一科学回应链。C1–C6 只供回查，不给固定组织。
-3. **各 Paragraph：** 在每个 Part 内先确定各段要完成的局部判断或推进动作、需要的理由或 evidence、段间如何承接，再决定是否需要下一段。用 TN-03 把同一子问题下实际需要的实验、推导或图表组成 evidence blocks；用 TN-04/05 规划 figure、caption、正文与 observation。Part 和 Paragraph 的数量及形式由实际任务决定，不预设标题、编号或篇幅。
-4. **段内连续句：** 在写英文前，按本段任务规划第一句如何进入实质、后续句分别回应前句留下的什么需求、何时进入条件、推导、设置、图表、观察或可查位置，以及本段如何结束或交给下段。此处只确定语义推进，不预设句数或套用连接词。
-5. 若确需结论，调用 TN-07 与 SD-01 检查其直接证据、范围及非重复；不为每个 block 强制生成 conclusion。用 TN-08/A2 按独立任务数量估计功能块和篇幅，不从作者的停止位置推断充分覆盖。
+为每个 obligation 核对判断标准、动作、直接 evidence、可支持 claim 和真实修改状态：
 
-先完成这一步，再写英文；不要从 phrase 开始拼接。
+- **evidence 足够**：可进入相应组织与生成；
+- **部分覆盖**：明确已覆盖和未覆盖部分，并缩小 claim；
+- **evidence 缺失或未核实**：保留可见缺口或输入需求，不写完成式语句；
+- **存在实质不利结果**：保留并据此校准判断和 conclusion。
 
-## Step 5 起草
+定义、量纲、时间区间、量词、公式及每步等式或不等式必须数学成立。稿件、实验、结果、图表、citation、修改位置和动作状态各自只由相应 primary evidence 核定，不用 TIE 风格或一般常识补造。
 
-沿 Step 4 已确定的整条逻辑、Part/Paragraph 职责和段内连续推进，从各段第一句起草到该段任务完成；每句均须接续前句留下的实际问题，或明确进入下一局部任务。逐句按 `02` 的 SL-01 至 SL-11 落实句法与用词。根据 reviewer situation、当前段落任务和上一句留下的 semantic state 确定下一句的认知任务，再依次决定：
+### 3.2 作者明确约束
 
-1. 谁承担语法主语：作者动作、技术对象、display evidence，还是对紧邻证据的 inference；
-2. 使用哪个具体动作/关系动词，以及 completed revision 与稳定事实所需的时态；
-3. 条件、baseline、metric、definition 和 location 放在哪个紧邻槽位；
-4. 前后句是 uptake、原因、增加、转折、实例、推论还是定位关系；
-5. 核心技术名词是否准确复现，代词和 `this/these/the above` 是否只有一个清楚先行项。
+只把作者明确确认的 scientific mainline、concern decomposition、主要回答顺序和必要推理依赖记为项目约束；作者只列出事项时，不自行把排列顺序冻结为写作顺序。
 
-关键量首次进入正文时，用当前项目确定的技术名称与正式符号建立对应；后文在新的 Paragraph/evidence block、关键 criterion、主要结果读取、comparison、claim 或 conclusion 处，按 reviewer 的阅读需要就近保留“含义＋符号”，紧邻重复或局部公式推导可简化。选择每个条件、方式、比较和范围短语时，同时调用 `04` 的 SD-01/SD-03：它修饰哪个实际对象、操作、测试条件、baseline 或 metric，覆盖哪些 evidence，支持多强的 claim。`with/under/by/across/all/selected/generally/respectively` 等词只有与 primary evidence 的真实关系一致时才可使用；不能让语言顺畅掩盖实验层级或 scope 的变化。
+若作者方案与 reviewer argument、primary evidence、数学事实、可支持 claim 或前后逻辑明确冲突，记录冲突及影响范围并等待裁决。不能静默重排，也不能机械照写。没有冲突且作者未规定的组织自由度，由 TIE-native 机制决定。
 
-礼貌承接后尽快进入可回答的对象、技术事实或动作；purpose 仅在有实际解释作用时出现。新增实验由 action 进入具体 setup、locator 和 observation；结果句显化有歧义的对象，Figure/Table 不必作语法主语，也不要求每个结果都给数字。条件与 baseline 贴近受其限定的 claim 或比较维度，术语连续复现，连接词只标真实关系；location 可在摘录或证据前后。若写结论，在该句同步按 SD-01 核对证据范围，并于 Step 6 汇总跨句 claim 检查。句法槽位用于组织信息，不从 TIE 抽取整句模板。
+## 4. Whole Response 与全局 Part map
 
-上述有序判断、Part/Paragraph 划分和逐句规划均是内部生成机制，不得机械外显为 reviewer-facing 的论点清单、标题或流程预告。对准备进入最终 Response 的每句话或信息，判断它是否真实帮助 reviewer 回答当前 concern、理解必要逻辑或 evidence、判断或限定 conclusion、消除真实歧义、核查 evidence 或 manuscript revision 的具体位置，或承担必要且简短的礼貌承接。有真实功能则保留最小充分表达；功能成立但表达过量则压缩；只对内部分析、规划或审计有用则删除。**内部分析需要 ≠ reviewer 必须看到。**“下面我们将……”等流程预告不能仅凭宽泛的“导航”作用保留；帮助 reviewer 核查 evidence 或 manuscript revision 的具体定位可以保留。
+在写句子前，先形成整条 Response 的有序核心判断：直接回答是什么，哪些判断必须成立，各判断需要什么事实、动作或 evidence，它们之间有何认知与因果依赖。用 `01` 确定从实质入口到解释、推导、实验、比较、图表、claim 或修改位置的整体主线。
 
-起草时不复制 TIE 句子，不补造实验、结果、citation、figure、line/page 或修改状态。
+据此建立全局 Part map。每个实际需要的 Part 只记录：整体职责、承接的上层问题、核心判断和 evidence，以及若存在下一 Part 时需要交接的理解需求。Part 按当前 concern 和证据自然形成，不按 obligation 数量、manuscript action 数量或历史范例预设拆分。必要的同一科学链应保持连续；确有独立任务时再进入新的实质 Part。
 
-## Step 6 两层审计
+按 reviewer situation 调用已验证机制：A1–A6 提供跨场景关系，B1–B6 提供情形触发机制；C1–C6 只允许回查原 scene，不生成固定路径。用 TN-08/A2 判断任务复杂度和最小充分篇幅，不能从范例停止位置推断当前任务已经覆盖充分。
 
-进入两层审计前，先核对项目路线：
+## 5. 逐 Part 执行
 
-- response 是否忠实实现作者明确确认的 scientific mainline、concern decomposition 和主要先后关系？
-- 是否有 TIE-native 的一般倾向擅自重排了已明确指定的项目关系？
-- 是否把作者仅列出的事项或未确认的建议错误冻结为顺序约束？
+按全局 map 一次处理一个 Part，同时保留 reviewer argument、Whole Response 主线、相邻 Part 关系和相关 evidence 状态。
 
-### 6.1 TIE-style audit
+### 5.1 规划 Paragraph
 
-严格按下列层级自上而下检查。每层先判断其任务是否完成，再按相应 reviewer situation 对照已验证的 TIE A/B 机制和作用相近的 scene；C1–C6 仅作单例参考。上层未通过时，不以局部句子流畅代替上层修复；发现问题只回到该层及受影响链条。
+先确定当前 Part 内各 Paragraph 要推进的主要判断、所需理由或 evidence、段间承接关系及停止位置，再决定是否需要下一段。用 TN-03 组织服务同一子问题的 evidence block；涉及实验、结果或图表时，用 `03` 规划 action、setup、locator、observation，以及 figure、caption 与正文的分工。
 
-1. **整条 Response：** 是否先正确还原 reviewer 的完整 argument，区分 supporting premises 与真正的 response obligations，再准确回答其真实关切；有序核心判断和整体逻辑是否由当前问题、证据与已确认的项目路线支持；首段是否尽快落到答案、动作或核心 evidence？
-2. **各 Part：** 每部分是否承担明确的整体任务、对应必要的核心判断；前后 Part 是否接续实际理解需求或转入另一实质任务，而非只靠编号、连接词或动作发生次序；evidence blocks 是否集中公共信息且保留独有 evidence？
-3. **各 Paragraph：** 每段是否有清楚的局部判断或推进动作，所需理由、推导或 evidence 是否放在恰当位置；段数与分段是否由任务决定，段尾是否自然完成本段任务或交给下段？有图表时，figure、caption 与正文是否各司其职？
-4. **段内连续句子：** 从第一句顺读到最后一句，下一句是否回应前句留下的实际问题；必要条件、前提、setup、locator、observation、推论或修改位置是否无跳步地接续？有图表时是否从 locator 读出具体 observation；location 或摘录是否可追溯且未被固定为末句？
-5. **单句与具体用词：** 对每句、每个会改变科学含义的关键 phrase，**同时调用 `02` 的 SL 语言实现与 `04` 的 SD-01/SD-03 科学核对**。主语、核心动词、时态和连接词是否承担正确语义责任；关键位置的技术含义与符号是否可直接读懂，回指是否唯一？实际实验对象、测试条件、baseline、metric、modifier scope、evidence range 和 claim scope 是否与 primary evidence 一致；范围词或介词短语究竟修饰什么，有无把 parameter/setting 改称其他实验层级或扩大 evidence？每句话或信息是否通过 Step 5 的 reviewer-facing necessity gate，并避免把内部规划机械外显？**语言 realization 与 evidence-semantic correctness 均通过，单句层才可 PASS；语法自然不能代替科学附着核验。**
+Paragraph 数量和边界由信息依赖、可读性和 evidence 需要产生。简单 Part 可由一个短段完成；不得为满足形式而拆段、合段或添加标题。
 
-### 6.2 supporting audit
+### 5.2 检查连续推进并处理全部句子
 
-此处汇总跨句、跨图表和整条回复的事实与质量门槛；不替代 6.1 第 5 层已经同步执行的 phrase-level 科学核对。
+对每个 Paragraph 从第一句顺读到最后一句，确认每一句为什么出现在这里、回应了上一句留下的什么实际需求，以及下一句为何需要。Setup、前提、推导、evidence、observation、explanation、inference、claim 和 location 按真实逻辑推进，不能用连接词掩盖跳步或失序。
 
-- 所有 concern 是否各有直接 evidence 或显式缺口？
-- 若有 conclusion，claim 是否超出测试/证明范围；是否隐藏会改变 claim 的实质不利结果？
-- 定义、维度、时间区间、量词、条件及每步等式/不等式是否数学成立？
-- source 与 citation 是否可追踪且未越权？
-- 术语、符号、图号、Table、panel、数值和位置是否与最新 artifact 一致？
-- 语言、搭配或重复是否把 TIE 原文的 source defect 带入新 response？
-- 是否命中 `05` 中的历史错误模式？
+对该段每一句同时完成两类核对：
 
-## Step 7 完成判断与停止
+1. **语言实现**：按 `02` 检查主语、核心动词、时态、指代、术语复现、连接关系、句法负担、语气和节奏；
+2. **科学关系**：按 `04` 核对实际对象、操作、测试条件、baseline、metric、definition、modifier scope、evidence range 和 claim scope。
 
-分别给出四种状态，不得混写：
+对会改变科学含义、证据范围或比较关系的关键短语，核对它在当前句中的实际含义与修饰对象。无需为每个普通词建立独立形式记录，但不能用整句语法通顺替代短语层面的科学核验。
 
-1. **response writing**：逻辑、组织、表达是否通过；
-2. **fact/evidence**：所有动作、结果、claim 是否已由 artifact 核验；
-3. **version/package**：response、稿件、图表、caption、citation 与定位是否同步；
-4. **submission readiness**：是否仍有 placeholder、未决证据、未编译/未视觉核对或其他阻塞项。
+关键量首次进入正文时，用当前项目的技术名称与正式符号建立对应；在新的 Paragraph/evidence block、关键 criterion、主要结果读取、comparison、claim 或 conclusion 处，按 reviewer 的阅读需要就近保留“含义＋符号”。紧邻重复或局部推导可简化。Figure/Table 不必作语法主语；结果句必须明确读出 concern-relevant observation，且不得隐藏实质不利结果。
 
-只有约定范围全部核验后才能宣布完成。通过后，除非出现新 evidence、明确缺陷或用户新要求，不再以一般写作偏好继续重写。这是项目执行与交付的停止规则，不是江 TIE_2621 作者“充分覆盖后才停”的 A2 fingerprint。
+每句话还须通过 reviewer-facing necessity gate：它应帮助 reviewer 得到答案、理解必要逻辑或 evidence、判断或限定 claim、消除真实歧义，或核查 evidence 与 manuscript revision 的具体位置。只对内部分析、分类或流程记录有用的信息不进入成文。删除或合并须确认该内容没有独立必要功能，且不会损害清晰度、准确性、必要承接或可追溯性。
 
-## 同类问题回查规则
+### 5.3 模式对应操作
 
-当用户或审计发现一个缺陷：
+- **Draft**：先完成当前层的可用规划，再生成当前 Paragraph；生成后立即执行本节的连续句和单句核对，再进入下一段。
+- **Audit**：把现有 Paragraph 的实际功能和推进顺序与上层规划逐项比较；完整扫描全部句子并记录真实问题，不修改文本。
+- **Revise**：先确认问题的根因层级及受影响范围；必要时更新上层规划，再只修改当前 Paragraph 中受影响的内容并复核依赖链。
 
-1. 把缺陷定义为可识别类别，例如“多先行项时的模糊指代”；
-2. 只搜索受该类别影响的范围；
-3. 定点修复所有同类实例；
-4. 重开相关 evidence、交叉引用和版本同步检查；
-5. 不修改已经正确且不受影响的内容。
+### 5.4 Part 回看
+
+完成当前 Part 后，从整体职责回看：各 Paragraph 是否共同闭合该 Part 的判断；证据是否集中而不重复；段间是否自然承接；是否保留了进入下一 Part 所需的状态。通过后才在记录中关闭该 Part。若失败，回到根因所在层及受影响内容，不默认重写整个 Response。
+
+## 6. 全文整合与 supporting gates
+
+所有 Part 处理后，从 reviewer argument 起完整顺读 Response：
+
+1. reviewer 的真实关切和全部 obligations 是否得到直接回答或显式标记缺口；
+2. Whole Response 的核心判断链、Part 顺序及段间推进是否符合当前认知依赖和作者已确认的路线；
+3. 是否有漏答、错答、无关展开、重复 evidence、scope 漂移或内部分析外显；
+4. 若有 conclusion，其证据是否直接、范围是否准确、是否只是重复；
+5. 定义、数学关系、术语、符号、图号、Table、panel、数值、citation、位置和 artifact 版本是否一致；
+6. source 与 citation 是否可追踪且未越权，修改状态是否真实；
+7. 是否复制 TIE 的 source defect，或命中 `05` 的历史错误模式；
+8. reviewer-facing Response 是否已达到最小充分，而没有固定模板留下的冗余。
+
+`07` 只在条件触发时调用。多位 reviewer 必须保持互盲；漏读情形和多义务情形按其正式边界处理。
+
+## 7. 分层状态与通过边界
+
+必须区分 **规划可用** 与 **成文通过**：
+
+- 规划可用表示当前层足以支持下一依赖层继续生成或修改；
+- 成文通过表示现有文本在约定范围内完成了该层职责，并通过证据、科学关系和语言实现检查。
+
+高层存在未解决问题时，阻止依赖该判断的 Draft、Revise 定稿或 PASS 声明。Audit 仍应继续完整扫描下层，以发现所有可观察问题；依赖错误上层的下层判断标记为暂定或失效，不能据此宣称通过。局部语言问题也不能反向证明 Whole Response 失败，除非它实际改变上层含义或覆盖。
+
+最终分别报告：
+
+1. **response writing**：逻辑、组织、连续推进和表达是否通过；
+2. **fact/evidence**：动作、结果、数学关系和 claim 是否由 artifact 核验；
+3. **version/package**：Response、稿件、图表、caption、citation 与定位是否同步；
+4. **submission readiness**：是否仍有 placeholder、未决 evidence、未编译或未视觉核对等 blocker。
+
+只有约定范围全部核验后才能宣布完成。无真实 blocker 时 PASS 并停止；“还能更优雅”本身不是 FAIL。
+
+## 8. 完整发现、分类与输出
+
+Audit 先完成发现，再核实和分类，最后形成输出。最终报告可以只保留会影响正确性、完整性、TIE 风格一致性或后续执行可靠性的 blocker，但精简输出不能减少扫描覆盖，也不能把未展示项目记成未检查。
+
+发现项至少区分：真实 blocker、需要核实的疑点、非阻断改进。证据不足或存在争议时标记待核实，不伪造正确答案。Audit 完成后停止，不自动进入修改；Draft 或 Revise 完成后也不越过用户指定阶段自行宣布更高层级通过。
+
+## 9. 因果重开与 surgical editing
+
+修改任一上层判断或输入版本后，按因果依赖重开：
+
+1. 识别变化影响的 obligation、核心判断、Part、Paragraph、句子、claim、evidence 和交叉引用；
+2. 只使直接依赖该变化的判断与文本失效；
+3. 重做受影响层及其下游检查，并在全文整合中确认未产生旁支冲突；
+4. 保留已核验且不依赖该变化的内容。
+
+不得锁死已被新证据推翻的高层规划，也不得因一处变化机械宣布所有后续内容失效。发现局部缺陷时，先定义可识别类别，搜索有证据支持的受影响范围，定点修复同类实例，再重开相关 evidence、交叉引用和版本同步检查。
+
+## 10. 按需加载与停止条件
+
+通过稳定章节定位加载知识：`01` 负责组织，`02` 负责连续句与语言实现，`03` 负责实验和图文，`04` 负责 evidence/claim/数学/术语/source，`05` 负责错误模式，`07` 负责条件规则。`08` 和 `04_TIE句子级表达重建/` 只在需要解释历史裁决、C 类边界、证据冲突或可疑规则时溯源，不作为默认运行流程。
+
+处理低层单元时必须保留作出当前判断所需的 reviewer obligation、Whole Response 主线、Part 职责和 evidence 状态；按需加载不是切断上层语境。
+
+达到用户指定阶段且通过相应门槛后立即停止。不得补造实验、结果、citation、figure、line/page 或修改状态，也不得在未授权时从 Audit 进入修改、从知识库更新进入 Response 写作，或扩大 surgical editing 范围。
 
 **Provenance:** CK-002、CK-019；CK-013/014 提供 source 与 consistency 边界；Nature/ARS 只支持 action、work status、readiness 分离和可核验完成。
