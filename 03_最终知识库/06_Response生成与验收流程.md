@@ -31,7 +31,6 @@ Part、Paragraph、句子、标题、结论及具体句式均不设固定数量�
 - reviewer 真正要判断什么；
 - 必须分别闭合的 obligations；
 - 支撑这些 obligations 的关键论据和判断标准；
-- 初步直接答案，以及使其成立所需的动作或 evidence；
 - 当前理解中确有歧义或待核实之处。
 
 Reviewer 理解先于回答策略和现有证据对齐。只有 reviewer 原文、明确上下文或可核查的文本关系支持时，才能有记录地修正初始理解；不得因为现有证据只够回答较窄问题，就反向缩窄 reviewer 的问题。复合 comment 触发 `07` 的 CS-01；不要把广义 concern 缩成最容易回答的一部分，也不要把每个 supporting premise 机械拆成独立义务。
@@ -54,6 +53,8 @@ Reviewer 理解先于回答策略和现有证据对齐。只有 reviewer 原文�
 只把作者明确确认的 scientific mainline、concern decomposition、主要回答顺序和必要推理依赖记为项目约束；作者只列出事项时，不自行把排列顺序冻结为写作顺序。
 
 若作者方案与 reviewer argument、primary evidence、数学事实、可支持 claim 或前后逻辑明确冲突，记录冲突及影响范围并等待裁决。不能静默重排，也不能机械照写。没有冲突且作者未规定的组织自由度，由 TIE-native 机制决定。
+
+完成 reviewer argument、source map、evidence gate 和作者约束对齐后，才形成初步直接答案、使其成立所需的动作或 evidence、可支持的 claim 及未决缺口。这些属于回答策略，不得写回或替代 reviewer intent。若项目对齐暴露了对 reviewer 理解的疑问，须返回 §2；只有 reviewer 原文或明确语境支持时才能有记录地修正，不能依据现有证据的便利程度改变 obligations。
 
 ## 4. Whole Response 与全局 Part map
 
