@@ -102,4 +102,4 @@ TIE 自身的 Figs. 2–5/实际涉及 Fig. 6、Table II/Table III/排版 Table 
 
 ## 4. 支持层停止线
 
-完成本文件的检查后，不得因“一般学术英语更规范”“另一期刊常这样写”或外部 Skill 的固定 phrase 再改写已经满足 TIE-native 逻辑的段落。支持层发现事实、覆盖、claim、source 或 consistency 缺陷时，回到受影响的核心单元定点修正；没有缺陷就停止。
+完成本文件的检查后，不得仅因一般措辞偏好、另一期刊的固定写法或外部 Skill 的 phrase 改写已准确、清楚、自然且符合 TIE 功能推进的段落。若发现事实、证据、claim、source、consistency 或真实专业表达缺陷，回到受影响单元按 `02 §4` 定点修正；没有缺陷就停止。
