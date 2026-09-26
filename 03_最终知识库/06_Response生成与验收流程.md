@@ -50,6 +50,8 @@ Reviewer 理解先于回答策略和现有证据对齐。只有 reviewer 原文�
 
 完成 reviewer argument、source map、evidence gate 和作者约束对齐后，才形成初步直接答案、使其成立所需的动作或 evidence、可支持的 claim 及未决缺口。这些属于回答策略，不得写回或替代 reviewer intent。若项目对齐暴露了对 reviewer 理解的疑问，须返回 §2；只有 reviewer 原文或明确语境支持时才能有记录地修正，不能依据现有证据的便利程度改变 obligations。
 
+对反复出现或易混淆的关键对象，同时按 `04` SD-03 在本条 Response 内固定其科学身份与实际关系，并按 SD-01 确定 evidence 能支持的判断范围和语言强度。这是后续组织和措辞的内部约束，不另建执行阶段或 reviewer-facing 分类说明。
+
 ## 4. Whole Response 与全局 Part map
 
 在写句子前，先形成整条 Response 的有序核心判断：直接回答是什么，哪些判断必须成立，各判断需要什么事实、动作或 evidence，它们之间有何认知与因果依赖。用 `01` 确定从实质入口到解释、推导、实验、比较、图表、claim 或修改位置的整体主线。
@@ -68,17 +70,19 @@ Reviewer 理解先于回答策略和现有证据对齐。只有 reviewer 原文�
 
 Paragraph 数量和边界由信息依赖、可读性和 evidence 需要产生。简单 Part 可由一个短段完成；不得为满足形式而拆段、合段或添加标题。
 
+准备新增 Paragraph 时，按 `01` TN-02 判断是否出现新的局部判断；可由受影响段落承担的内容就地替换、合并或压缩，确有新判断时才扩展。
+
 ### 5.2 检查连续推进并处理全部句子
 
 对每个 Paragraph 从第一句顺读到最后一句，确认每一句为什么出现在这里、回应了上一句留下的什么实际需求，以及下一句为何需要。Setup、前提、推导、evidence、observation、explanation、inference、claim 和 location 按真实逻辑推进，不能用连接词掩盖跳步或失序。
 
-在该段及相邻句语境中，每次只处理一句，按 `02 §4` 执行同一条 Sentence/Phrase 机制：先脱离原措辞，从上层职责、前后句、作者路线及 primary evidence 重建本句必须承担的 meaning 和功能；再默认用 `04_TIE句子级表达重建/00_TIE_2621_sentence_realization基准.md` 中最近的同功能证据独立形成 shadow realization，SL-01～SL-11 只作辅助判据；最后回到原句比较功能承载、对象命名、主语与核心动词、信息组织、科学附着、符号可读性、连续推进和停止位置。
+在该段及相邻句语境中，每次只处理一句，按 `02 §4` 执行同一条 Sentence/Phrase 机制：先脱离原措辞，从上层职责、前后句、作者路线及 primary evidence 重建本句必须承担的 meaning 和功能，用 `04` 锁定科学对象关系、证据范围和可支持的语言强度；再默认用 `04_TIE句子级表达重建/00_TIE_2621_sentence_realization基准.md` 中最近的同功能证据独立形成 shadow realization，SL-01～SL-11 只作辅助判据；最后按原句的实际读法核对对象指称、修饰附着与判断强度，并比较功能承载、主语与核心动词、信息组织、符号可读性、连续推进和停止位置。
 
 这是同一句内的判断次序，不另设阶段、状态或第三遍 audit。原句语法正确、可理解、意思可恢复或一般自然，不能替代 TIE realization 比较；shadow 措辞不同本身也不是 failure，只有当前语境与同功能证据支持的实际偏离才报问题。事实待核实不能结束可观察表达审查，也不能冒充整句 PASS；无需为每个普通词建立独立记录。
 
 符号可读性按 `02` SL-04 的当前阅读位置判断，不用“已经定义、符号一致”代替。Figure/Table 不必作语法主语；结果句必须明确读出 concern-relevant observation，且不得隐藏实质不利结果。
 
-每句话还须通过 reviewer-facing necessity gate：它应帮助 reviewer 得到答案、理解必要逻辑或 evidence、判断或限定 claim、消除真实歧义，或核查 evidence 与 manuscript revision 的具体位置。只对内部分析、分类或流程记录有用的信息不进入成文。当当前 obligation、必要解释、evidence、claim boundary 和 traceability 已闭合，且下一句没有新的必要认知职责时立即停止，不为显得完整或保险补充无关的防御性说明。删除或合并须确认该内容没有独立必要功能，且不会损害清晰度、准确性、必要承接或可追溯性；不能仅凭 TIE 范例的停止位置判定当前任务已闭合。
+每句话还须通过 reviewer-facing necessity gate：它应帮助 reviewer 得到答案、理解必要逻辑或 evidence、判断或限定 claim、消除真实歧义，或核查 evidence 与 manuscript revision 的具体位置。准备新增一句时，先判断它带来什么尚未承担的认知职责；若现有句已完成同一职责，优先替换、合并或压缩，确有新职责才追加。只对内部分析、分类或流程记录有用的信息不进入成文。当当前 obligation、必要解释、evidence、claim boundary 和 traceability 已闭合，且下一句没有新的必要认知职责时立即停止，不为显得完整或保险补充无关的防御性说明。删除或合并须确认该内容没有独立必要功能，且不会损害清晰度、准确性、必要承接或可追溯性；不能仅凭 TIE 范例的停止位置判定当前任务已闭合。
 
 ### 5.3 模式对应操作
 
@@ -98,7 +102,7 @@ Paragraph 数量和边界由信息依赖、可读性和 evidence 需要产生。
 2. Whole Response 的核心判断链、Part 顺序及段间推进是否符合当前认知依赖和作者已确认的路线；
 3. 是否有漏答、错答、无关展开、重复 evidence、scope 漂移或内部分析外显；
 4. 若有 conclusion，其证据是否直接、范围是否准确、是否只是重复；
-5. 定义、数学关系、术语、符号、图号、Table、panel、数值、citation、位置和 artifact 版本是否一致；
+5. 科学对象及关系、定义、数学关系、术语、符号、图号、Table、panel、数值、citation、位置和 artifact 版本是否一致；
 6. source 与 citation 是否可追踪且未越权，修改状态是否真实；
 7. 是否复制 TIE 的 source defect，或命中 `05` 的历史错误模式；
 8. reviewer-facing Response 是否已达到最小充分，而没有固定模板留下的冗余。
@@ -133,7 +137,7 @@ Audit 先完成发现，再核实和分类，最后形成输出。最终报告�
 
 修改任一上层判断或输入版本后，按因果依赖重开：
 
-1. 识别变化影响的 obligation、核心判断、Part、Paragraph、句子、claim、evidence 和交叉引用；
+1. 识别变化影响的 obligation、核心判断、Part、Paragraph、句子、科学对象及关系、claim 强度、evidence 和交叉引用；
 2. 只使直接依赖该变化的判断与文本失效；
 3. 重做受影响层及其下游检查，并在全文整合中确认未产生旁支冲突；
 4. 保留已核验且不依赖该变化的内容。

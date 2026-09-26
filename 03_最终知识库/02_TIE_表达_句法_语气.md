@@ -225,9 +225,9 @@ SL-01～SL-11 是本文件唯一的 sentence-level knowledge layer。使用时�
 
 在 reviewer situation、段落任务及相邻句语境中，每次处理一句；Draft、Audit、Revise 共用以下同一句内的 meaning reconstruction → shadow realization → differential comparison，不另设执行层或第三遍 audit。
 
-1. **脱离原措辞重建 meaning。** 暂不沿用现有主语、动词和名词组合，依据当前句应承担的功能、上下句需求、作者已确认路线和 primary evidence，确定必须表达的对象、动作、关系、条件、baseline、metric、范围及必要承接。用 `04` 核对科学附着与事实状态；事实待核实的部分保持未核实，不让原句的表面通顺预先决定其应怎样实现。
-2. **独立形成 shadow realization。** 默认查 `04_TIE句子级表达重建/00_TIE_2621_sentence_realization基准.md` 中最接近的同功能 A/B 证据，必要时回查 TIE PDF；C 类只作匹配情形的单例参考。依据这些证据独立决定本句的功能承载、对象命名、主语与核心动词、信息位置、科学限定、技术符号可读性、相邻句衔接及停止位置。SL-01～SL-11 只作相关辅助判据；不从原句替换几个词来制造 shadow，也不复制 TIE 的个案事实、source defects 或固定句型。
-3. **回到原句作 differential comparison。** 判断原句是否在上述方面真实偏离同功能 TIE realization，并说明当前上下文及证据如何支持该判断。原句 grammatically correct、understandable、recoverable 或 generally natural 不足以直接 PASS；shadow 与原句措辞不同也不足以 FAIL。没有足够匹配证据时，不凭一般英语偏好宣称 TIE-specific failure。
+1. **脱离原措辞重建 meaning。** 暂不沿用现有主语、动词和名词组合，依据当前句应承担的功能、上下句需求、作者已确认路线和 primary evidence，确定必须表达的对象、动作、关系、条件、baseline、metric、证据范围及必要承接。用 `04` 核对科学对象之间的真实关系、可支持的 claim 强度和事实状态；事实待核实的部分保持未核实，不让原句的表面通顺预先决定其应怎样实现。
+2. **独立形成 shadow realization。** 默认查 `04_TIE句子级表达重建/00_TIE_2621_sentence_realization基准.md` 中最接近的同功能 A/B 证据，必要时回查 TIE PDF；C 类只作匹配情形的单例参考。在第 1 步已经确定的科学约束内，依据 TIE 证据独立决定本句的功能承载、对象命名、主语与核心动词、信息位置、限定关系、技术符号在当前阅读位置的可读性、相邻句衔接及停止位置。SL-01～SL-11 只作相关辅助判据；不从原句替换几个词来制造 shadow，也不复制 TIE 的个案事实、source defects 或固定句型。
+3. **回到原句作 differential comparison。** 先按原句的实际读法确定它指向什么对象、让哪个短语修饰什么、承诺何种证据范围与判断强度，不用作者意图替原句补全；再与第 1 步的 meaning 和第 2 步的同功能 TIE realization 比较，说明真实差异及当前上下文的依据。原句 grammatically correct、understandable、recoverable 或 generally natural 不足以直接 PASS；shadow 与原句措辞不同也不足以 FAIL。没有足够匹配证据时，不凭一般英语偏好宣称 TIE-specific failure。
 
 对压缩组合和元叙述式名词组，实际比较其命名和搭配，不因“不改变科学事实”就跳过，也不因较概括就判错。遇到功能或措辞争议，按需要回看同功能的 TIE 句段，核对对象、动作和推进，不以相同前缀、语态或某短语未在 TIE 出现作为裁决标准。TIE 的语法、搭配、冗余或过强 claim 缺陷仍只作最小专业化修正，不作为表达指纹。
 

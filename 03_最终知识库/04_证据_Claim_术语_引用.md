@@ -25,6 +25,8 @@
 - 与当前 conclusion 有实质关系的不利 evidence 必须保留，并用于收紧 claim。
 - 缺少直接 evidence 时，显式标记未验证、降低 claim 或保留 limitation，不用更多文字掩盖缺口。
 
+**Evidence strength → claim strength：** Draft 时先据直接 evidence 的对象、比较双方、指标、条件和覆盖范围确定可说到哪里，再选择句子的核心谓语、情态、量词、比较关系和概括范围。Audit 时按原句实际措辞还原它承诺了什么，并与同一 evidence 核对；Revise 只调整受影响的关系与强度。直接观察、间接推论和未测试的外推不能写成同等确定性；也不因谨慎而机械削弱已有直接证据支持的判断。范围词和强弱词须按当前关系及例外裁决，不建立词语等级表或禁词表。
+
 TIE R2-2 的有条件证明提供正面组织；R4-4 用外扰实验覆盖量化、延迟和速度估计等多个独立问题，是代理 evidence 的反例。
 
 ### 3. 对新 response 的最低检查
@@ -35,7 +37,7 @@ TIE R2-2 的有条件证明提供正面组织；R4-4 用外扰实验覆盖量化
 
 若 response 回答定义、公式、推导或证明，须回到当前项目的原始数学材料逐项核验：矩阵/向量维度、定义域与时间区间、量词和完整成立条件；每个等式及不等式的中间步骤，尤其 `>` 与 `≥` 的严格关系；假设是否足以推出所写 conclusion；新旧 equation number、符号和稿件版本是否一致。**写出了推导不等于推导数学上成立。**B3 只给局部推导的组织，C1 的完整 proof 仅为单例参考；此 gate 是新 response 的正确性检查，不是江 TIE 作者稳定做到的表达。TIE R2-2 的严格不等号/矩阵表述和 R2-3 的 SVD 维度/符号均提示必须独立核查。
 
-**Provenance:** CK-003、CK-004、CK-011、CK-012；Nature/ARS concern—action—evidence 与 claim–source alignment 只作 supporting。
+**Provenance:** CK-003、CK-004、CK-011、CK-012；Nature/ARS concern—action—evidence、claim–source alignment 与 evidence-calibrated language 只作 supporting。
 
 ## SD-02 source、provenance 与 citation
 
@@ -72,6 +74,8 @@ TIE R2-2 的有条件证明提供正面组织；R4-4 用外扰实验覆盖量化
 
 reviewer 首次需要理解关键指标、术语或符号时，同时给出清楚含义和正式符号。后文稳定使用，不要求每次重复完整定义。正式名称与符号必须来自当前稿件或实验 primary source，不能从 TIE、文件名或脚本创造。
 
+对当前 Response 中反复出现或容易混淆的关键科学对象，依据 primary evidence 在内部确定其正式身份、可接受的指称、所属层级，以及与方法、任务、设置、比较对象、baseline、metric、条件和 evidence 的实际关系。Draft 据此命名和建立关系；Audit 检查原文实际指称及附着；Revise 更新受影响的称谓与关系。只保留本条 Response 判断所需的轻量基准，不要求单独交付 ledger；同一对象的自然措辞变化不自动构成 drift，不同对象也不能被一个泛称混为一体。来源不明时标记未核实，不凭上下文猜定身份。
+
 **符号一致不等于 reviewer 可读性充分。** 后文可在紧邻重复或局部式链中只用符号；进入新的段落/证据块，或陈述关键 criterion、主要结果、比较及结论时，若裸符号会迫使 reviewer 回查定义，应就近重现技术含义与符号的对应。这里要求读者能连续判断对象，不设每次重写全称的格式规则；具体表达由 `02` 的 SL-04/SL-05 实现。
 
 ### 2. 指代与对象
@@ -79,6 +83,8 @@ reviewer 首次需要理解关键指标、术语或符号时，同时给出清�
 当多个方法、指标、任务、figures 或 panels 并列时，显化必要对象。实际无歧义时允许代词、简称和局部 panel 引用。目标是唯一可解析，不是机械重复全称。
 
 逐句核对关键限定短语的**科学附着**：它实际修饰的实验对象、操作、条件、baseline、metric 和范围，须与当前项目 primary evidence 的真实关系一致。不能因介词、量词或副词在语法上成立，就把某项 parameter/setting 改称另一实验层级，或把部分 evidence 扩成总体 claim；范围与结论强度仍由 SD-01 判定，`02`/`06` 在 phrase level 调用该判定。
+
+同一名称在相邻句中可能承担不同判断，范围词也可能限定不同关系；核对每句的实际对象集合、比较关系及 evidence range，而不只比较词形是否一致。准确的内部关系只在 reviewer 理解答案所需处以最小充分形式写出，不把内部身份表外显为解释段。
 
 ### 3. 修改同步
 
@@ -90,7 +96,7 @@ reviewer 首次需要理解关键指标、术语或符号时，同时给出清�
 
 TIE 自身的 Figs. 2–5/实际涉及 Fig. 6、Table II/Table III/排版 Table 2，以及 reviewer 编号重复均为一致性负例，不可迁移。
 
-**Provenance:** CK-002、CK-010、CK-014、CK-019 的一致性部分；TIE R1-2 与 R4-6 的编号错误为负例；Nature package consistency 只作 supporting。
+**Provenance:** CK-002、CK-010、CK-014、CK-019 的一致性部分；TIE R1-2 与 R4-6 的编号错误为负例；Nature terminology ledger、consistency sweep 与 package consistency 只作 supporting。
 
 ## 4. 支持层停止线
 
