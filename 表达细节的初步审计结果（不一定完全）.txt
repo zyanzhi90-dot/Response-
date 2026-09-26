@@ -1,0 +1,51 @@
+
+逐句审计后，**Comment 1 和 Comment 2 当前真正需要修改的表达问题如下**：
+
+1. **C1：**“Accordingly, we have further clarified the computational evaluation and conducted **online-timing comparisons in Cases 1 and 2 and in the simulation task of this study by varying \(W_x\) and \(S_e(t)\)**.”  
+   **问题：**后半句的修饰关系不清，`by varying \(W_x\) and \(S_e(t)\)` 会自然作用于前面的整个并列对象，容易理解成 Cases 1、2 也通过改变这两个量得到；同时 `online-timing comparisons` 是生硬的压缩复合词，不符合 TIE 直接写 `comparison studies/results`、`computational efficiency` 的朴素表达习惯。:chatgpt-content-reference{index="2"}
+
+2. **C1：多处直接只写符号，需要改为“变量含义 + 符号”，或者直接用文字表达关系。** 当前包括：`a prescribed level of \(J_j\)`、`Real-time feasibility requires \(t_{\mathrm{comp}}^{\max}<\Delta t\)`、`Both the task cost \(J_j\) and \(t_{\mathrm{comp}}^{\max}\) are reported`、两处 `yields \(J_{10}\)`、`yields \(t_{\mathrm{comp}}^{\max}\)`、`satisfy \(t_{\mathrm{comp}}^{\max}<\Delta t\)`。这些量即使前文定义过，也不应要求 reviewer 持续记忆符号；尤其裸写不等式最影响可读性。:chatgpt-content-reference{index="3"} :chatgpt-content-reference{index="4"}
+
+3. **C1：**“For the **simulation task in this study**, comparisons have also been conducted...”  
+   **问题：**`simulation task in this study` 是不自然的元叙述式名词组合，而且这里真正要区分的是“前面的 Cases 1/2”与“本文仿真中的参数变化比较”，`task in this study` 没有把这个关系直接说清。TIE 在进入新实验块时通常直接写目的和实验动作，而不是给当前实验人为造一个模糊标签。:chatgpt-content-reference{index="5"}
+
+4. **C1：**“...a lower task cost \(J_{10}\) than IL-SOGP for **all reported values of \(W_x\)** and settings of \(S_e(t)\).”  
+   **问题：**这里的核心问题就是 `all reported values of` 本身不专业、不自然，不是 claim boundary 的问题。实验条件应直接称为所比较/测试的参数设置，而不是“被报告的 values”；这种表达明显不像 TIE 的直接结果陈述。:chatgpt-content-reference{index="6"}
+
+5. **C1：**同一句中的 “values of \(W_x\) and settings of \(S_e(t)\)” 以及下一句 “Although \(t_{\mathrm{comp}}^{\max}\)..., \(t_{\mathrm{comp}}^{\max}<\Delta t\)...”  
+   **问题：**再次退回只写符号。这里应继续保持 `position-error weight \(W_x\)`、`environment stiffness \(S_e(t)\)`、`maximum online computation time per control step \(t_{\mathrm{comp}}^{\max}\)`、`control period \(\Delta t\)` 的可读形式，而不是定义一次后全部符号化。:chatgpt-content-reference{index="7"}
+
+6. **C1：**“Although ... is **generally higher** than that of IL-SOGP...”  
+   **问题：**`generally` 是没有说明例外范围的松散限定。TIE 读取结果时通常直接陈述图中观察到的具体关系，再给结论；这里如果图中的关系成立，应直接说清，若存在例外则应明确例外，不能用 `generally` 模糊处理。TIE 的典型结果推进是先明确图号、再直接描述观察结果。:chatgpt-content-reference{index="8"}
+
+7. **C1 结尾：**“...satisfies the real-time feasibility criterion \(t_{\mathrm{comp}}^{\max}<\Delta t\) ... and the **tested variations in \(W_x\) and \(S_e(t)\)**...”  
+   **问题：**一是再次裸写符号；二是 `tested variations in` 是抽象的实验汇总措辞，不如直接指明 `tested settings of the position-error weight \(W_x\) and environment stiffness \(S_e(t)\)` 清楚。当前写法不像 TIE 那样把对象本身直接说出来。:chatgpt-content-reference{index="9"}
+
+8. **C2：**“...reach \(J_j<1.5\)...”以及“...with \(t_{\mathrm{comp}}^{\max}<\Delta t\) as the criterion.”  
+   **问题：**前一句已经写了 `task-cost value \(J_j\)`，马上又退回裸符号；后一句虽然刚给出 `maximum online computation time per control step`，但紧接着又让 reviewer 自己解码整个不等式。更符合当前标准的表达是让“task cost / maximum online computation time / control period”继续留在句子里。:chatgpt-content-reference{index="10"}
+
+9. **C2：**“The 8.7617 s and 2.4688 s values **cited in the comment** are the average runtimes...”  
+   **问题：**这里应解释的是**本文 Table I 中 runtime 一列究竟表示什么**，而不是把数值来源写成“reviewer comment 中引用的数值”。当前句子把解释锚点放错了，使 response 像是在解释 reviewer 的文字，而不是澄清自己 manuscript 中容易被误解的量。:chatgpt-content-reference{index="11"}
+
+10. **C2：**“Real-time feasibility is assessed by whether \(t_{\mathrm{comp}}^{\max}<\Delta t\).”  
+    **问题：**与 C1 相同，整句实际上只剩一个裸不等式；这是用户阅读负担最大的表达之一。应保留变量含义，或者直接写“the maximum online computation time per control step remains below the control period”。:chatgpt-content-reference{index="12"}
+
+11. **C2：**“**To make this distinction explicit**, Table I has been revised by...”  
+    **问题：**这一句承担的是“报告 manuscript 如何修改”的功能，不是在进入新的实验/论证部分。TIE 中 `To further...` 主要用于开启一个新的实质分析或实验块；报告已经完成的正文修改时，实际采用的是 `According to your suggestion...`、`As suggested, ... has been presented...` 等直接 revision-report 写法。因此这里的 `To make...` 功能位置不对。:chatgpt-content-reference{index="13"} :chatgpt-content-reference{index="14"}
+
+12. **C2：**“...we have measured \(t_{\mathrm{comp}}^{\max}\) **in Cases 1 and 2 and in the simulation task of this study by varying \(W_x\) and \(S_e(t)\)**.”  
+    **问题：**与 C1 完全相同：`by varying...` 的作用域错误，且 `simulation task of this study` 不自然；同时 `measured \(t_{\mathrm{comp}}^{\max}\)` 又只给符号，没有保留变量名称。:chatgpt-content-reference{index="15"}
+
+13. **C2 后续结果句：**“the proposed method gives \(t_{\mathrm{comp}}^{\max}=...\)”、“Figs. 1(d) and 2(d) give \(t_{\mathrm{comp}}^{\max}=...\)”、“Both values satisfy \(t_{\mathrm{comp}}^{\max}<\Delta t\)”、“with \(W_x=200I\)”、“with \(S_e(t)=...\)”  
+    **问题：**这一整段再次连续退化成符号驱动表达，而且同一概念还在 `online computation times`、`\(t_{\mathrm{comp}}^{\max}\)`、`Both values` 之间切换。应稳定使用变量名 + 符号，让 reviewer 不需要回溯。:chatgpt-content-reference{index="16"}
+
+14. **C2：**“The **complete comparisons** in Figs. 3 and 4 show that this criterion is also satisfied for **all tested variations in \(W_x\) and \(S_e(t)\)**.”  
+    **问题：**`complete comparisons` 不是自然的结果指称，TIE 对这一功能直接写 `comparison results`；`all tested variations in` 同样是抽象、偏 AI 式的概括，应该直接说比较的是哪些参数设置。:chatgpt-content-reference{index="17"} TIE 的对应习惯就是直接写 `The comparison results are depicted...`。:chatgpt-content-reference{index="18"}
+
+15. **C2：**“Across Cases 1 and 2 and the **selected \(W_x\) and \(S_e(t)\) comparisons**, the proposed method **generally** requires...”  
+    **问题：**`selected \(W_x\) and \(S_e(t)\) comparisons` 本身不清楚——\(W_x\) 和 \(S_e(t)\) 是实验设置，不是“comparisons”；而且上一句刚说 `all tested variations`，这里马上变成 `selected ... comparisons`，证据范围被自己重新模糊。`generally` 又增加了一层没有说明例外的模糊限定。:chatgpt-content-reference{index="19"}
+
+16. **C2 结尾：**“Taken together, the results show that the proposed method satisfies \(t_{\mathrm{comp}}^{\max}<\Delta t\) ... and the **tested variations in \(W_x\) and \(S_e(t)\)**...”  
+    **问题：**`Taken together` 本身可以接受，真正的问题仍是结论再次变成裸符号 + `tested variations` 的抽象表达；作为整条 response 的收束句，反而应该是最容易一遍读懂的一句。:chatgpt-content-reference{index="20"}
+
+所以，**真正的问题主线是四类：变量/符号没有持续保持可读性；若干人工压缩或元叙述式词组不自然；修饰关系和证据范围表达不清；特定句子的功能与 TIE 在同类位置的写法不一致。** 这也与知识库要求的“主语、核心动词、信息顺序、限定条件、连接方式、术语重复和具体用词逐句检查”一致。:chatgpt-content-reference{index="21"}
