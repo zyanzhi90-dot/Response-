@@ -1,42 +1,80 @@
-Step 3 clean behavior validation｜C1/C2 Response 独立审计
+Step 3 clean behavior validation｜C1/C2 Response 逐句独立审计（修正版）
 日期：2026-09-27
 
-审计对象：D:\桌面\科研_response\ilc优化版_tcyb\第三轮\response_TCYB2\Response-TCYB.pdf 中 Referee No. 4 的 Comment 1、Comment 2 及完整 Response（PDF 物理页 6–13，含图 1–4）。
-事实核对：同项目 02_manuscript/root.tex、root.pdf；作者确认的 response 思路。组织和表达判据：本仓库最新版 03_最终知识库及 04_TIE句子级表达重建/00，必要时回查 TIE 原 PDF。本报告不使用历史 failure、旧 verdict 或预期答案。
+审计对象：D:\桌面\科研_response\ilc优化版_tcyb\第三轮\response_TCYB2\Response-TCYB.pdf 中 Referee No. 4 的 Comment 1、Comment 2 和全部 Response（PDF 物理页 6–13，包括图 1–4 及 captions）。本版按用户最新要求，只用该 Response PDF 的可见内容和本仓库当前 03_最终知识库/00–07、04_TIE句子级表达重建/00 的适用规则判断；TIE 原 PDF 仅校准组织与表达。不以 JAS 原文、外部实验或另一个 manuscript 版本判定问题，也不使用历史 failure、旧 verdict 或评分 oracle。
 
-结论：C1、C2 均有尚未闭合的实质问题，不能判整条 Response 通过。下列项目按根因所在的最高必要层级归类；同一根因在下层的表现只在该项内说明，不重复计数。“可更精练”但已达标的文字不列入问题。
+判断方式：先顺读两个 reviewer comment，分别恢复整条回答、Part、段落及连续句的功能；再逐句脱离现有措辞重建应表达的对象、动作、条件、baseline、metric 与证据范围，与同功能 TIE realization 比较。每项只放在根因所在层级，附原文/位置、问题、判断依据；同一问题在另一句重现时合并列出。不把单纯“还可润色”列为问题。
 
-一、Reviewer argument / obligations
+逐句覆盖定位：
+  C1：页 6 首段五句；“1) Computational objective...”段及随后方法比较句；页 7 的 Cases 1/2 设定句、读图句和图 1/2 captions；页 9–11 的 Wx/Se(t) 设定、图 3/4 正文与 captions、末句。
+  C2：页 11–12 首段、评价框架段、8.7617/2.4688 计算段、Table I 修改句；页 12–13 原机器人、Cases 1/2、Wx/Se(t) 计时段及末句。
 
-原 comment 的判断对象：C1 质疑计算效率结论在不同任务或设置下的普适性，指出此前仅变环境刚度、只读任务代价的收敛实验不能证明计算成本优势。C2 用 O(L³) 对 O(L²) 及 Table I 的运行时间作论据，明确要求二选一：提供支撑所称计算优势的理论和实验依据，或在全文把相关 claim 收窄至已证明的范围。复杂度和表格数字是这项要求的支撑论据，不另拆成独立 obligation。
+一、Reviewer argument / Whole Response
 
-本层未发现需要另列的 reviewer intent 误读项；问题发生在回答如何闭合这些要求。
+W1｜C1：回答主线把“计算效率结论在不同任务/设置下是否成立”缩成“所测单步时间低于控制周期”。
+原文/位置：页 6 “The paper does not claim that fast-AGP has the lowest computational cost…”紧接“For online implementation, the relevant requirement is…”；页 7 与页 10–11 又承认所测单步时间高于 IL-SOGP，末句仅归结为 t_comp^max < Δt。
+问题：否认最低成本、说明实时阈值与新增计时均有其作用，但“比 IL-SOGP 计算更省”与“虽更慢仍来得及在线运行”是不同判断。Response 没有明确将新增证据、相反的单步比较和原有计算效率 claim 接合，因而未正面闭合 reviewer 说的 generality of the computational-efficiency conclusion。连续先读 J_j、后读计时是此根因在下层的表现，不另算一次。
+判断依据：C1 原 comment 的最后三句；最终知识库 01 的 concern 驱动主线、04 的 concern→evidence→claim boundary、06 的 Whole Response gate。
 
-二、Whole Response / 核心判断链
+W2｜C2：没有完成 reviewer 明确给出的“证明计算优势或收窄全文 claim”二选一。
+原文/位置：页 11 reviewer 最后一句；页 12–13 Response 承认 61.3319 s 对 24.6880 s、单步时间一般高于 IL-SOGP，最后仅给“satisfies t_comp^max < Δt”。
+问题：这些事实支持跨轮收敛较快和所测条件下实时可行，却不能证明相对 SOGP 的计算优势；Response 也没有说明哪些计算优势主张已被撤回或限缩。O(L³) 对 O(L²) 是 reviewer 的支撑论据，不另造独立 obligation，但在这条核心判断中不能被实时阈值替代。
+判断依据：C2 原 comment 的选择关系；最终知识库 04 的 evidence/claim gate、06 的 obligation completeness。乘法和对不利结果的披露本身正确，不列为错误。
 
-W1｜C1：把“跨任务/设置的相对计算效率”转成“所测条件下满足实时阈值”，两者未明确接合。
-原文/位置：PDF 物理页 6：“The paper does not claim that fast-AGP has the lowest computational cost…”；“For online implementation, the relevant requirement is that the computation at each control step be completed within the control period.” 页 7 又称 Cases 1/2 中 fast-AGP 的单步时间高于 IL-SOGP；页 10–11 的图 3/4 及正文仍显示其单步时间一般更高。
-问题：否认“最低成本”及展示 t_comp^max < Δt 可以回答误读和实时可行性，但不能自行回答 reviewer 针对相对计算效率结论及其适用范围的质疑。现有数据还包含与相对计算优势相反的比较。整条回复没有把“较快跨轮收敛”“较慢单步计算”“仍在所测周期内”分别对应到论文究竟保留、放弃或限制了哪些计算效率判断。
-判断依据：reviewer C1 的末段明确区分 computational-efficiency conclusion 与 convergence performance；知识库 01 的 concern 驱动主线及 04 的 concern→direct evidence→claim gate。文中多次先读 J_j 再读计时，是这一主线偏移在证据顺序上的表现，不另计段落问题。图中的实时阈值结果本身不因此失效。
+二、Part / Paragraph / 证据块
 
-W2｜C2：没有闭合 reviewer 明确给出的“证明计算优势或全文收窄 claim”选择。
-原文/位置：PDF 物理页 11 的 reviewer 要求；页 12–13 的 Response 计算出 8.7617×7=61.3319 s、2.4688×10=24.6880 s，并承认 fast-AGP 在所列比较中通常有更长单步在线计算时间；末句只归结为所测情形满足 t_comp^max < Δt。
-问题：较少 ILC 轮次、较长累计模拟运行时间和单步实时达标都已说清，但它们不能构成相对 SOGP 计算优势的证明。回复也未给出全文相关 claim 已如何收窄的具体内容或可核查位置。原 comment 的 O(L³) 对 O(L²) 无须成为独立 Part，但它对“计算优势”的限制没有进入最后判断。因此 C2 的主要要求仍未闭合。
-判断依据：reviewer C2 的明确二选一要求；知识库 04 的 evidence/claim boundary 与 06 的 obligation 完成门槛。原文对不利数值的披露和两项乘法是正确的，不把它们列为错误。
+P1｜C1/C2：把 Cases 1/2 直接称作“不同任务”，但同一 PDF 提供的区别不足以让 reviewer 判断“任务”究竟如何不同。
+原文/位置：C1 页 7 “under different tasks”以及“Case 1 evaluates accurate tracking with the output matrix C=[25, 0, 1], whereas Case 2 evaluates compliant interaction with C=[100, 0, 0.1].”；C2 页 12 “Cases 1 and 2 correspond to two different tasks”。两处同时说明它们使用同一模拟机器人、同一接触/滑动场景。
+问题：正文给了两个控制目标名称和 C 的数字，却没有说明 C 在目标中起什么作用，或哪些任务条件实际改变。“two different tasks”于是承担了比邻近设定句能够直接证明的身份判断。此项只判断 Response 自身的可读性和证据标记，不根据外部论文裁定两案实际上是否为不同任务。
+判断依据：最终知识库 01 的 setup→evidence 功能推进、03 的实验独有条件、04 的 evidence identity 与 claim scope、02 SL-05/SL-10。
 
-三、Part / Paragraph / 连续句
+P2｜C1 图 3/4 证据块：两组单因素变化的固定条件未在 Response 正文或 captions 中交代。
+原文/位置：页 9 “The position-error weight Wx is set to 20I, 50I, and 200I, while ... Wf=I is kept fixed. Separately, the environment stiffness Se(t) is set to ...”；图 3 caption 只给 Wx 与 Wf，图 4 caption 只给 Se(t)。C2 页 13 再引用两图的计时结果。
+问题：图 3 未写变 Wx 时 Se(t) 取什么设定；图 4 未写变 Se(t) 时 Wx 取什么设定。“Separately”只说明两组扫描分开做，不能让 reviewer 确定未变的关键条件。由于问题正是不同设置下的计算表现，缺口影响两组结果的解释和比较边界。
+判断依据：最终知识库 03 的 concrete setup / caption 自足与多图共享条件，04 的 condition 和 evidence range gate。此项不推断未写出的固定值。
 
-逐段顺读 C1 的框架→Cases 1/2→权重/刚度图组及 C2 的框架→Table I 计算→各计时证据，未发现可与 W1/W2 区分的独立 blocker；不把由 W1/W2 派生的排序和收束表现再列一遍。C1 对另一控制器比较对象的简短说明虽非本条重点，但不足以构成阻断问题，不列为 failure。
+三、连续句与 reviewer-facing 必要性
 
-四、Sentence / Phrase / 用词
+Q1｜C2 的运行时间解释段在已经完成指标区分后，立刻重说同一实时判据，造成实际推进停顿。
+原文/位置：页 12 框架段已写“with t_comp^max < Δt as the criterion”；计算段后又连续写“These per-iteration and estimated cumulative simulation runtimes are different from ... t_comp^max. Real-time feasibility is assessed by whether t_comp^max < Δt.”
+问题：第一句完成了累计运行时间与单步时间的区分；紧接的第二句没有新增条件、证据或结论，只重复刚在同一 Part 建立的判据。它在读完 reviewer 乘积后占据了应交接给 Table I 修改或新证据的位置。
+判断依据：最终知识库 01 的连续功能交接、02 SL-11 的紧邻回指和 06 §5.2 的下一句必要性。末尾汇总不同实验范围的句子另有职责，不与本项合并。
 
-对两条 Response 的实际句子、图 1–4 的正文引用及 caption 作了逐句功能、指代、条件、baseline、metric 和 claim 强度检查。未发现脱离 W1/W2 后仍需单列的句法、术语、计算或措辞 blocker；未把可读但可再压缩的重复句判成问题。
+四、Sentence / Phrase / 用词与科学附着
 
-五、Supporting gate：稿件版本与修改状态
+S1｜C1/C2 相同的“by varying Wx and Se(t)”挂接范围不清，还把两次分开的设置扫描压成一个并列动作。
+原文/位置：C1 页 6 “conducted online-timing comparisons in Cases 1 and 2 and in the simulation task of this study by varying Wx and Se(t)”；C2 页 12 “measured t_comp^max in Cases 1 and 2 and in the simulation task of this study by varying Wx and Se(t)”。
+问题：句末 by varying 可回挂整串 Cases 1/2 + 本文模拟任务；实际后文只在本文模拟任务下分别改变 Wx、Se(t)。同时“varying Wx and Se(t)”本身不显出“分别”两个扫描。读者须依赖后文重新解析此句的实验归属。
+判断依据：同一 PDF 后续“Separately”及 Case 1/2 的 C 设定；最终知识库 02 §4 对介词短语附着与对象命名、04 SD-03 科学附着。两处相同根因只计一次。
 
-V1｜C2 的 Table I 已修改声明，当前指定项目材料不能核验；C1/C2 的稿件同步状态随之未闭合。
-原文/位置：Response PDF 物理页 12：“Table I has been revised by replacing the per-iteration runtime column with the maximum online computation time per control step…”；同项目 02_manuscript/root.tex 第 1039–1059 行及 root.pdf 的 Table I 仍为“Runtime (s)”列，表后仍解释为完整 5 s 模拟轮次的平均运行时间。
-问题：Response 所述 Table I 与目前可见的稿件版本相冲突，不能据此核验“已改”及相关 claim 是否在全文同步。root.tex/root.pdf 的修改时间为 2026-09-22，Response PDF 为 2026-09-25；因此这是版本/提交包待核实的真实阻断项，不能直接断言作者最终未改稿。若另有更新稿，须以那份稿件重开此 gate。
-判断依据：知识库 04 的修改状态与版本一致性、06 §1/§6 的 source 和 package gate。该项只计一次，不在 W2 重复计为另一项事实错误。
+S2｜C1 对 fast-AGP 的比较对象表述未限定语境，与同条及 C2 后文的比较对象不一致。
+原文/位置：页 7 “Fast-AGP is compared with a standard Gaussian process (GP), whereas CRBFNN is compared with a lattice-distributed RBFNN”；随后 C1 页 7–11 多次报告 fast-AGP 对 IL-SOGP，C2 页 12–13 也比较 fast-AGP 与 SOGP。
+问题：该句以“the methods used in the computational-burden comparisons”为总领，后句却只把标准 GP 写成 fast-AGP 的比较对象。未限定“哪一处/哪一种”比较，会让 reviewer 把后续 SOGP 计时比较与前述方法对照读成矛盾或遗漏；单句主谓关系本身流畅，问题在名词组的范围。
+判断依据：同一 PDF 的比较对象链；最终知识库 02 SL-04/SL-10 与 04 SD-03 的 baseline 唯一性和跨段术语关系。
 
-审计边界：图 1–4 的已呈现曲线、panel、阈值及正文主要数字之间未见另需列出的明确冲突；本报告不以 Response 内的图替代原始实验记录来证明实验执行过程。未修改 Response、知识库或项目稿件。
+S3｜C2 用一次达到阈值所需的轮次数，概括为整个“learning convergence”。
+原文/位置：页 12 “the 7 and 10 iterations required ... to reach J_j < 1.5 characterize learning convergence across iterations”。
+问题：7 和 10 是“首次达到指定阈值的轮次”这一指标，只能直接描述 threshold-reaching speed；“characterize learning convergence across iterations”把单个阈值事件写成对整个收敛过程的刻画。限定已经在句中，仍须让谓语与被测量同范围。
+判断依据：句内给出的唯一证据是轮次与阈值；最终知识库 02 SL-10、04 SD-01 的 metric→claim strength。
+
+S4｜C2 两次用“before reaching the threshold”修饰包含达标轮次的累计时间，时间边界不准确。
+原文/位置：页 12 “estimated cumulative simulation runtimes of 61.3319 s ... (8.7617×7) and 24.6880 s ... (2.4688×10) before the prescribed task-cost threshold is reached”；下一句又写“before reaching the threshold”。
+问题：乘以 7/10 已包含第 7/10 个首次达标的迭代；严格的“before reaching”容易被读成不含达标迭代。数值乘法正确，问题是限定语的时间范围；第二处沿用同一根因，不另计。
+判断依据：同段前文明确“7 and 10 iterations required ... to reach J_j < 1.5”；最终知识库 02 SL-05/SL-10、04 的数学量词与时间区间 gate。
+
+S5｜C2 用“task proceeds through iterations”承担本应由重复执行/学习过程承担的动作。
+原文/位置：页 12 “An ILC task proceeds through multiple iterations, and each iteration contains a sequence of control steps…”；同一 Response 的 C1 已写“In iterative learning control (ILC), the same task is executed over successive iterations.”
+问题：这里要建立的是同一任务被重复执行、每次执行包含多个控制步。“task proceeds through iterations”让 task 像过程一样自行经历迭代，弱化了“同一任务反复执行”的核心关系；它虽可猜出意思，却比当前 PDF 内已有的明确表述更易引起任务与迭代层级混淆。
+判断依据：同一 PDF 的定义句与本段的认知任务；最终知识库 02 SL-04 的 semantic subject/core verb 责任和 §4 的 meaning→realization 比较。
+
+S6｜C2 的不利比较用“selected ... generally”模糊了本 PDF 已呈现的观察集合。
+原文/位置：页 13 “Across Cases 1 and 2 and the selected Wx and Se(t) comparisons, the proposed method generally requires more per-step online computation time than IL-SOGP”；紧前句称图 3/4 是“complete comparisons ... all tested variations”，图 1–4 的可见时间曲线均把 proposed method 画在 IL-SOGP 之上。
+问题：“selected”没有指明是否只取前文两个示例点，或包括图 3/4 的全部测试设置；“generally”又把当前图中的直接不利方向弱化为不明例外的趋势。二词叠加使结论的 evidence range 比图和邻句更难判读。
+判断依据：同 PDF 图 1–4、前后范围词；最终知识库 02 SL-10 与 04 SD-01 对 all/selected/generally 的范围核对和实质不利结果读取。此项不外推到未测试设置。
+
+S7｜C1/C2 反复使用“maximum online computation time per control step”却未界定 max 的取值窗口，使曲线与单个数字的含义靠读者推断。
+原文/位置：C1 页 6 首次给 t_comp^max < Δt；图 1–4 的对应 timing panels 横轴为 iteration j、每轮各有一个 t_comp^max 点；C2 页 12–13 又报告 9.90、4.75、4.65、9.73、6.85 ms 等单个 t_comp^max 数值。
+问题：如果每个图点是该轮所有控制步中的最大值，而正文单数值又是跨轮最大值，两个层级应在首次定义或关键结果处说明。现有术语只说“per control step”，没有说明最大值是对一轮中的控制步取、对所有迭代取，还是两者嵌套；reviewer 需要自行从曲线和句子反推指标窗口，影响跨情形的计时比较。
+判断依据：同一 PDF 的符号首次使用、图轴和结果句；最终知识库 02 SL-04/SL-05 的符号可读性、04 SD-03 的 metric 定义及数学范围 gate。此项只指出窗口未定义，不猜测实验实际如何聚合。
+
+停止边界：图号/panel 与正文列举的主要数值、8.7617×7 和 2.4688×10 的算术、各组明确给出的 Δt 阈值，未见需另报的错误。上述问题之外，仅属句式可再精练、重复术语可压缩或语气偏好的地方不计入。C1/C2 的 Response 和知识库均未在本次审计中修改。
