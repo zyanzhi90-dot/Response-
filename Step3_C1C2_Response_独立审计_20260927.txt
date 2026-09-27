@@ -1,0 +1,42 @@
+Step 3 clean behavior validation｜C1/C2 Response 独立审计
+日期：2026-09-27
+
+审计对象：D:\桌面\科研_response\ilc优化版_tcyb\第三轮\response_TCYB2\Response-TCYB.pdf 中 Referee No. 4 的 Comment 1、Comment 2 及完整 Response（PDF 物理页 6–13，含图 1–4）。
+事实核对：同项目 02_manuscript/root.tex、root.pdf；作者确认的 response 思路。组织和表达判据：本仓库最新版 03_最终知识库及 04_TIE句子级表达重建/00，必要时回查 TIE 原 PDF。本报告不使用历史 failure、旧 verdict 或预期答案。
+
+结论：C1、C2 均有尚未闭合的实质问题，不能判整条 Response 通过。下列项目按根因所在的最高必要层级归类；同一根因在下层的表现只在该项内说明，不重复计数。“可更精练”但已达标的文字不列入问题。
+
+一、Reviewer argument / obligations
+
+原 comment 的判断对象：C1 质疑计算效率结论在不同任务或设置下的普适性，指出此前仅变环境刚度、只读任务代价的收敛实验不能证明计算成本优势。C2 用 O(L³) 对 O(L²) 及 Table I 的运行时间作论据，明确要求二选一：提供支撑所称计算优势的理论和实验依据，或在全文把相关 claim 收窄至已证明的范围。复杂度和表格数字是这项要求的支撑论据，不另拆成独立 obligation。
+
+本层未发现需要另列的 reviewer intent 误读项；问题发生在回答如何闭合这些要求。
+
+二、Whole Response / 核心判断链
+
+W1｜C1：把“跨任务/设置的相对计算效率”转成“所测条件下满足实时阈值”，两者未明确接合。
+原文/位置：PDF 物理页 6：“The paper does not claim that fast-AGP has the lowest computational cost…”；“For online implementation, the relevant requirement is that the computation at each control step be completed within the control period.” 页 7 又称 Cases 1/2 中 fast-AGP 的单步时间高于 IL-SOGP；页 10–11 的图 3/4 及正文仍显示其单步时间一般更高。
+问题：否认“最低成本”及展示 t_comp^max < Δt 可以回答误读和实时可行性，但不能自行回答 reviewer 针对相对计算效率结论及其适用范围的质疑。现有数据还包含与相对计算优势相反的比较。整条回复没有把“较快跨轮收敛”“较慢单步计算”“仍在所测周期内”分别对应到论文究竟保留、放弃或限制了哪些计算效率判断。
+判断依据：reviewer C1 的末段明确区分 computational-efficiency conclusion 与 convergence performance；知识库 01 的 concern 驱动主线及 04 的 concern→direct evidence→claim gate。文中多次先读 J_j 再读计时，是这一主线偏移在证据顺序上的表现，不另计段落问题。图中的实时阈值结果本身不因此失效。
+
+W2｜C2：没有闭合 reviewer 明确给出的“证明计算优势或全文收窄 claim”选择。
+原文/位置：PDF 物理页 11 的 reviewer 要求；页 12–13 的 Response 计算出 8.7617×7=61.3319 s、2.4688×10=24.6880 s，并承认 fast-AGP 在所列比较中通常有更长单步在线计算时间；末句只归结为所测情形满足 t_comp^max < Δt。
+问题：较少 ILC 轮次、较长累计模拟运行时间和单步实时达标都已说清，但它们不能构成相对 SOGP 计算优势的证明。回复也未给出全文相关 claim 已如何收窄的具体内容或可核查位置。原 comment 的 O(L³) 对 O(L²) 无须成为独立 Part，但它对“计算优势”的限制没有进入最后判断。因此 C2 的主要要求仍未闭合。
+判断依据：reviewer C2 的明确二选一要求；知识库 04 的 evidence/claim boundary 与 06 的 obligation 完成门槛。原文对不利数值的披露和两项乘法是正确的，不把它们列为错误。
+
+三、Part / Paragraph / 连续句
+
+逐段顺读 C1 的框架→Cases 1/2→权重/刚度图组及 C2 的框架→Table I 计算→各计时证据，未发现可与 W1/W2 区分的独立 blocker；不把由 W1/W2 派生的排序和收束表现再列一遍。C1 对另一控制器比较对象的简短说明虽非本条重点，但不足以构成阻断问题，不列为 failure。
+
+四、Sentence / Phrase / 用词
+
+对两条 Response 的实际句子、图 1–4 的正文引用及 caption 作了逐句功能、指代、条件、baseline、metric 和 claim 强度检查。未发现脱离 W1/W2 后仍需单列的句法、术语、计算或措辞 blocker；未把可读但可再压缩的重复句判成问题。
+
+五、Supporting gate：稿件版本与修改状态
+
+V1｜C2 的 Table I 已修改声明，当前指定项目材料不能核验；C1/C2 的稿件同步状态随之未闭合。
+原文/位置：Response PDF 物理页 12：“Table I has been revised by replacing the per-iteration runtime column with the maximum online computation time per control step…”；同项目 02_manuscript/root.tex 第 1039–1059 行及 root.pdf 的 Table I 仍为“Runtime (s)”列，表后仍解释为完整 5 s 模拟轮次的平均运行时间。
+问题：Response 所述 Table I 与目前可见的稿件版本相冲突，不能据此核验“已改”及相关 claim 是否在全文同步。root.tex/root.pdf 的修改时间为 2026-09-22，Response PDF 为 2026-09-25；因此这是版本/提交包待核实的真实阻断项，不能直接断言作者最终未改稿。若另有更新稿，须以那份稿件重开此 gate。
+判断依据：知识库 04 的修改状态与版本一致性、06 §1/§6 的 source 和 package gate。该项只计一次，不在 W2 重复计为另一项事实错误。
+
+审计边界：图 1–4 的已呈现曲线、panel、阈值及正文主要数字之间未见另需列出的明确冲突；本报告不以 Response 内的图替代原始实验记录来证明实验执行过程。未修改 Response、知识库或项目稿件。
